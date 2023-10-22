@@ -1,10 +1,14 @@
 import {springTiming, TransitionSeries} from '@remotion/transitions';
 import {AbsoluteFill} from 'remotion';
 import {slide} from '@remotion/transitions/slide';
-import {LetterA, LetterB} from './Letter';
+import {Letter} from './Letter';
 import React from 'react';
 
-export const Grid = () => {
+const delays = [4, 9, 18, 25];
+const endDelays = [30, 30, 30, 35];
+const delays3 = [40, 43, 26, 24];
+
+export const NanaGrid = () => {
 	return (
 		<AbsoluteFill
 			style={{
@@ -14,16 +18,13 @@ export const Grid = () => {
 			<AbsoluteFill
 				style={{
 					display: 'block',
-					scale: '0.8',
-					borderRadius: 50,
-					overflow: 'hidden',
 				}}
 			>
-				{new Array(16).fill(true).map((_, i) => (
+				{new Array(4).fill(true).map((_, i) => (
 					<div
 						style={{
-							height: 270,
-							width: 270,
+							height: 540,
+							width: 540,
 							position: 'relative',
 							overflow: 'hidden',
 							display: 'inline-block',
@@ -31,7 +32,12 @@ export const Grid = () => {
 							verticalAlign: 'top',
 						}}
 					>
-						<Transitions key={i} delay={i} />
+						<Transitions
+							key={i}
+							startDelay={delays[i]}
+							endDelay={endDelays[i]}
+							delay3={delays3[i]}
+						/>
 					</div>
 				))}
 			</AbsoluteFill>
@@ -40,22 +46,42 @@ export const Grid = () => {
 };
 
 const Transitions: React.FC<{
-	delay: number;
-}> = ({delay}) => {
+	startDelay: number;
+	endDelay: number;
+	delay3: number;
+}> = ({startDelay, endDelay, delay3}) => {
 	return (
 		<TransitionSeries style={{}}>
-			<TransitionSeries.Sequence durationInFrames={50 + delay}>
+			<TransitionSeries.Sequence durationInFrames={10 + startDelay}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<LetterA />
+					<Letter backgroundColor="#3B82EB" letter="Na" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
-				timing={springTiming({config: {damping: 200}})}
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
 				presentation={slide({direction: 'from-right'})}
 			/>
-			<TransitionSeries.Sequence durationInFrames={40}>
+			<TransitionSeries.Sequence durationInFrames={10 + endDelay}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<LetterB />
+					<Letter backgroundColor="#F5C3CB" letter="Na" />
+				</AbsoluteFill>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={slide({direction: 'from-left'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={10 + delay3}>
+				<AbsoluteFill style={{overflow: 'hidden'}}>
+					<Letter backgroundColor="red" letter="Na" />
+				</AbsoluteFill>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={slide({direction: 'from-top'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={80}>
+				<AbsoluteFill style={{overflow: 'hidden'}}>
+					<Letter backgroundColor="green" letter="Na" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 		</TransitionSeries>
