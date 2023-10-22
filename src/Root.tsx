@@ -4,6 +4,8 @@ import {CubeDemo} from './Cube';
 import {FlyWheel} from './FlyWheel';
 import {NanaGrid} from './Grid';
 import {IDontWannaWork2} from './IDontWannaWork2';
+import {IDontWannaWork3} from './IDontWannaWork3';
+import {Lottery} from './Lottery';
 import {Main} from './Main';
 import {TextMask} from './TextMask';
 
@@ -59,8 +61,24 @@ export const RemotionRoot: React.FC = () => {
 				height={1080}
 			/>
 			<Composition
+				id="IDontWannaWork3"
+				component={IDontWannaWork3}
+				durationInFrames={300}
+				fps={30}
+				width={1080}
+				height={1080}
+			/>
+			<Composition
 				id="CubeDemo"
 				component={CubeDemo}
+				durationInFrames={400}
+				fps={30}
+				width={1080}
+				height={1080}
+			/>
+			<Composition
+				id="Lottery"
+				component={Lottery}
 				durationInFrames={400}
 				fps={30}
 				width={1080}

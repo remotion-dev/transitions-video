@@ -5,7 +5,10 @@ import {AbsoluteFill} from 'remotion';
 import {NanaGrid} from './Grid';
 import {IDontWannaWork} from './IDontWannaWork';
 import {IDontWannaWork2} from './IDontWannaWork2';
+import {IDontWannaWork3} from './IDontWannaWork3';
 import {Letter} from './Letter';
+import {Lottery} from './Lottery';
+import {cube} from './presentations/cube';
 import {flywheel} from './presentations/flywheel';
 import {TextMask} from './TextMask';
 
@@ -96,10 +99,31 @@ export const FlyWheel = () => {
 					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
 					presentation={slide({direction: 'from-top'})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={100}>
+				<TransitionSeries.Sequence durationInFrames={60}>
 					<Tile>
 						<IDontWannaWork2 />
 					</Tile>
+				</TransitionSeries.Sequence>
+				<TransitionSeries.Transition
+					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+					presentation={slide({direction: 'from-right'})}
+				/>
+				<TransitionSeries.Sequence durationInFrames={50}>
+					<Lottery />
+				</TransitionSeries.Sequence>
+				<TransitionSeries.Transition
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+					presentation={cube({direction: 'from-top', perspective: 1000})}
+				/>
+				<TransitionSeries.Sequence durationInFrames={50}>
+					<Lottery />
+				</TransitionSeries.Sequence>
+				<TransitionSeries.Transition
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+					presentation={cube({direction: 'from-top', perspective: 1000})}
+				/>
+				<TransitionSeries.Sequence durationInFrames={80}>
+					<IDontWannaWork3 />
 				</TransitionSeries.Sequence>
 			</TransitionSeries>
 		</AbsoluteFill>

@@ -14,6 +14,7 @@ export const Letter: React.FC<{
 				fontSize: 250,
 				fontFamily: 'sans-serif',
 				fontWeight: 'bold',
+				WebkitBackfaceVisibility: 'hidden',
 			}}
 		>
 			{letter}

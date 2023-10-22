@@ -87,6 +87,7 @@ const Cube: React.FC<
 			transformOrigin,
 			transform: `${translateProperty}(${translate}) ${rotateProperty}(${rotation}deg)`,
 			backfaceVisibility: 'hidden',
+			WebkitBackfaceVisibility: 'hidden',
 		};
 	}, [passedProps.direction, presentationDirection, presentationProgress]);
 
