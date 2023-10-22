@@ -23,6 +23,20 @@ export const CubeDemo: React.FC = () => {
 			<TransitionSeries.Sequence durationInFrames={90}>
 				<AbsoluteFill style={{backgroundColor: 'green'}} />
 			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={linearTiming({durationInFrames: 40})}
+				presentation={cube({direction: 'from-top', perspective: 1000})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={90}>
+				<AbsoluteFill style={{backgroundColor: 'yellow'}} />
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={linearTiming({durationInFrames: 40})}
+				presentation={cube({direction: 'from-bottom', perspective: 1000})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={90}>
+				<AbsoluteFill style={{backgroundColor: 'orange'}} />
+			</TransitionSeries.Sequence>
 		</TransitionSeries>
 	);
 };
