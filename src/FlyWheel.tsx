@@ -1,18 +1,21 @@
 import {springTiming, TransitionSeries} from '@remotion/transitions';
 import {slide} from '@remotion/transitions/slide';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill, Img} from 'remotion';
 import {Different} from './Different';
 import {NanaGrid} from './Grid';
 import {IDontWannaWork} from './IDontWannaWork';
 import {IDontWannaWork2} from './IDontWannaWork2';
 import {IDontWannaWork3} from './IDontWannaWork3';
 import {IDontWannaWork4} from './IDontWannaWork4';
-import {Letter} from './Letter';
 import {Lottery} from './Lottery';
+import {PackageManagers} from './PackageManagers';
 import {cube} from './presentations/cube';
 import {flywheel} from './presentations/flywheel';
 import {TextMask} from './TextMask';
+import {fontFamily} from '@remotion/google-fonts/SofiaSansExtraCondensed';
+import {flip} from './presentations/flip';
+import {BLUE, GREEN, PINK} from './colors';
 
 export const FlyWheel = () => {
 	return (
@@ -23,7 +26,17 @@ export const FlyWheel = () => {
 		>
 			<TransitionSeries style={{}}>
 				<TransitionSeries.Sequence durationInFrames={25}>
-					<AbsoluteFill />
+					<AbsoluteFill
+						style={{
+							justifyContent: 'center',
+							alignItems: 'center',
+						}}
+					>
+						<Img
+							style={{height: 300}}
+							src="https://github.com/remotion-dev/brand/raw/main/withouttitle/element-0.png"
+						/>
+					</AbsoluteFill>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
 					timing={springTiming({config: {damping: 200}, durationInFrames: 6})}
@@ -31,7 +44,19 @@ export const FlyWheel = () => {
 				/>
 				<TransitionSeries.Sequence durationInFrames={25}>
 					<Tile>
-						<Letter letter="Na Na" backgroundColor="orange" />
+						<AbsoluteFill
+							style={{
+								justifyContent: 'center',
+								alignItems: 'center',
+								fontFamily,
+								fontSize: 400,
+								color: 'white',
+								backgroundColor: BLUE,
+								fontWeight: 'bolder',
+							}}
+						>
+							NA NA
+						</AbsoluteFill>
 					</Tile>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
@@ -40,7 +65,19 @@ export const FlyWheel = () => {
 				/>
 				<TransitionSeries.Sequence durationInFrames={25}>
 					<Tile>
-						<Letter letter="Na Na" backgroundColor="black" />
+						<AbsoluteFill
+							style={{
+								justifyContent: 'center',
+								alignItems: 'center',
+								fontFamily,
+								fontSize: 400,
+								color: 'white',
+								backgroundColor: PINK,
+								fontWeight: 'bolder',
+							}}
+						>
+							NA NA
+						</AbsoluteFill>{' '}
 					</Tile>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
@@ -49,7 +86,19 @@ export const FlyWheel = () => {
 				/>
 				<TransitionSeries.Sequence durationInFrames={25}>
 					<Tile>
-						<Letter letter="Na Na" backgroundColor="green" />
+						<AbsoluteFill
+							style={{
+								justifyContent: 'center',
+								alignItems: 'center',
+								fontFamily,
+								fontSize: 400,
+								color: 'white',
+								backgroundColor: GREEN,
+								fontWeight: 'bolder',
+							}}
+						>
+							NA NA
+						</AbsoluteFill>{' '}
 					</Tile>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
@@ -58,7 +107,19 @@ export const FlyWheel = () => {
 				/>
 				<TransitionSeries.Sequence durationInFrames={20}>
 					<Tile>
-						<Letter letter="Na" backgroundColor="pink" />
+						<AbsoluteFill
+							style={{
+								justifyContent: 'center',
+								alignItems: 'center',
+								fontFamily,
+								fontSize: 400,
+								color: 'white',
+								backgroundColor: PINK,
+								fontWeight: 'bolder',
+							}}
+						>
+							NA NA
+						</AbsoluteFill>{' '}
 					</Tile>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
@@ -67,7 +128,19 @@ export const FlyWheel = () => {
 				/>
 				<TransitionSeries.Sequence durationInFrames={25}>
 					<Tile>
-						<Letter letter="Na" backgroundColor="magenta" />
+						<AbsoluteFill
+							style={{
+								justifyContent: 'center',
+								alignItems: 'center',
+								fontFamily,
+								fontSize: 400,
+								color: 'white',
+								backgroundColor: BLUE,
+								fontWeight: 'bolder',
+							}}
+						>
+							NA NA
+						</AbsoluteFill>{' '}
 					</Tile>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
@@ -102,23 +175,21 @@ export const FlyWheel = () => {
 					presentation={slide({direction: 'from-top'})}
 				/>
 				<TransitionSeries.Sequence durationInFrames={60}>
-					<Tile>
-						<IDontWannaWork2 />
-					</Tile>
+					<IDontWannaWork2 />
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
 					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
 					presentation={slide({direction: 'from-right'})}
 				/>
 				<TransitionSeries.Sequence durationInFrames={50}>
-					<Lottery />
+					<Lottery flipped={false} />
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
 					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
-					presentation={cube({direction: 'from-top', perspective: 1000})}
+					presentation={flip({direction: 'from-left', perspective: 1000})}
 				/>
 				<TransitionSeries.Sequence durationInFrames={50}>
-					<Lottery />
+					<Lottery flipped />
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
 					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
@@ -138,8 +209,15 @@ export const FlyWheel = () => {
 					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
 					presentation={cube({direction: 'from-left', perspective: 1000})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={90}>
+				<TransitionSeries.Sequence durationInFrames={60}>
 					<IDontWannaWork4 />
+				</TransitionSeries.Sequence>
+				<TransitionSeries.Transition
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+					presentation={cube({direction: 'from-left', perspective: 1000})}
+				/>
+				<TransitionSeries.Sequence durationInFrames={300}>
+					<PackageManagers />
 				</TransitionSeries.Sequence>
 			</TransitionSeries>
 		</AbsoluteFill>

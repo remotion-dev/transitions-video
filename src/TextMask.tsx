@@ -9,6 +9,7 @@ import {
 	useCurrentFrame,
 	useVideoConfig,
 } from 'remotion';
+import {BLUE, GREEN, ORANGE, PINK} from './colors';
 import {loadFont} from './load-font';
 import {circleWipe} from './presentations/circle-wipe';
 import {clockWipe} from './presentations/clock-wipe';
@@ -41,7 +42,7 @@ export const TextMask: React.FC = () => {
 				<TransitionSeries.Sequence durationInFrames={37}>
 					<AbsoluteFill
 						style={{
-							backgroundColor: 'green',
+							backgroundColor: GREEN,
 							justifyContent: 'center',
 							alignItems: 'center',
 							fontSize: 120,
@@ -56,7 +57,7 @@ export const TextMask: React.FC = () => {
 				<TransitionSeries.Sequence durationInFrames={30}>
 					<AbsoluteFill
 						style={{
-							backgroundColor: 'blue',
+							backgroundColor: BLUE,
 							justifyContent: 'center',
 							alignItems: 'center',
 							fontSize: 120,
@@ -71,7 +72,7 @@ export const TextMask: React.FC = () => {
 				<TransitionSeries.Sequence durationInFrames={27}>
 					<AbsoluteFill
 						style={{
-							backgroundColor: 'red',
+							backgroundColor: PINK,
 							justifyContent: 'center',
 							alignItems: 'center',
 							fontSize: 120,
@@ -81,27 +82,12 @@ export const TextMask: React.FC = () => {
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
 					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
-					presentation={slide({direction: 'from-bottom'})}
+					presentation={wipe({direction: 'from-bottom'})}
 				/>
 				<TransitionSeries.Sequence durationInFrames={25}>
 					<AbsoluteFill
 						style={{
-							backgroundColor: 'yellow',
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: 120,
-							fontFamily: 'Menhir',
-						}}
-					/>
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
-					presentation={wipe({direction: 'from-bottom-right'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={25}>
-					<AbsoluteFill
-						style={{
-							backgroundColor: 'orange',
+							backgroundColor: ORANGE,
 							justifyContent: 'center',
 							alignItems: 'center',
 							fontSize: 120,
@@ -116,7 +102,7 @@ export const TextMask: React.FC = () => {
 				<TransitionSeries.Sequence durationInFrames={25}>
 					<AbsoluteFill
 						style={{
-							backgroundColor: 'orange',
+							backgroundColor: BLUE,
 							justifyContent: 'center',
 							alignItems: 'center',
 							fontSize: 120,
@@ -128,10 +114,25 @@ export const TextMask: React.FC = () => {
 					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
 					presentation={wipe({direction: 'from-top-left'})}
 				/>
+				<TransitionSeries.Sequence durationInFrames={25}>
+					<AbsoluteFill
+						style={{
+							backgroundColor: PINK,
+							justifyContent: 'center',
+							alignItems: 'center',
+							fontSize: 120,
+							fontFamily: 'Menhir',
+						}}
+					/>
+				</TransitionSeries.Sequence>
+				<TransitionSeries.Transition
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+					presentation={wipe({direction: 'from-left'})}
+				/>
 				<TransitionSeries.Sequence durationInFrames={30}>
 					<AbsoluteFill
 						style={{
-							backgroundColor: 'black',
+							backgroundColor: GREEN,
 							justifyContent: 'center',
 							alignItems: 'center',
 							fontSize: 120,
@@ -147,7 +148,7 @@ export const TextMask: React.FC = () => {
 				<TransitionSeries.Sequence durationInFrames={30}>
 					<AbsoluteFill
 						style={{
-							backgroundColor: 'red',
+							backgroundColor: ORANGE,
 							justifyContent: 'center',
 							alignItems: 'center',
 							fontSize: 120,
@@ -163,7 +164,7 @@ export const TextMask: React.FC = () => {
 				<TransitionSeries.Sequence durationInFrames={105}>
 					<AbsoluteFill
 						style={{
-							backgroundColor: 'purple',
+							backgroundColor: PINK,
 							justifyContent: 'center',
 							alignItems: 'center',
 							fontSize: 120,

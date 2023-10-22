@@ -6,6 +6,7 @@ import {Letter} from './Letter';
 import React from 'react';
 import {cube} from './presentations/cube';
 import {clockWipe} from './presentations/clock-wipe';
+import {BLUE, GREEN, PINK} from './colors';
 
 const delays = [4, 9, 18, 25];
 const endDelays = [30, 30, 30, 35];
@@ -21,6 +22,9 @@ export const Different = () => {
 			<AbsoluteFill
 				style={{
 					display: 'block',
+					scale: String(0.8),
+					borderRadius: 40,
+					overflow: 'hidden',
 				}}
 			>
 				{new Array(4).fill(true).map((_, i) => (
@@ -83,7 +87,7 @@ const SlideTransitions: React.FC<{
 		<TransitionSeries style={{}}>
 			<TransitionSeries.Sequence durationInFrames={10 + startDelay}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="#3B82EB" letter="Na" />
+					<Letter backgroundColor={BLUE} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
@@ -92,7 +96,7 @@ const SlideTransitions: React.FC<{
 			/>
 			<TransitionSeries.Sequence durationInFrames={10 + endDelay}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="#F5C3CB" letter="Na" />
+					<Letter backgroundColor={PINK} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
@@ -101,16 +105,7 @@ const SlideTransitions: React.FC<{
 			/>
 			<TransitionSeries.Sequence durationInFrames={10 + delay3}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="red" letter="Na" />
-				</AbsoluteFill>
-			</TransitionSeries.Sequence>
-			<TransitionSeries.Transition
-				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-				presentation={slide({direction: 'from-top'})}
-			/>
-			<TransitionSeries.Sequence durationInFrames={80}>
-				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="green" letter="Na" />
+					<Letter backgroundColor={GREEN} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 		</TransitionSeries>
@@ -126,7 +121,7 @@ const CubeTransitions: React.FC<{
 		<TransitionSeries style={{}}>
 			<TransitionSeries.Sequence durationInFrames={10 + startDelay}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="#3B82EB" letter="Na" />
+					<Letter backgroundColor={BLUE} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
@@ -135,7 +130,7 @@ const CubeTransitions: React.FC<{
 			/>
 			<TransitionSeries.Sequence durationInFrames={10 + endDelay}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="#F5C3CB" letter="Na" />
+					<Letter backgroundColor={PINK} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
@@ -144,16 +139,7 @@ const CubeTransitions: React.FC<{
 			/>
 			<TransitionSeries.Sequence durationInFrames={10 + delay3}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="red" letter="Na" />
-				</AbsoluteFill>
-			</TransitionSeries.Sequence>
-			<TransitionSeries.Transition
-				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-				presentation={cube({perspective: 1000, direction: 'from-top'})}
-			/>
-			<TransitionSeries.Sequence durationInFrames={80}>
-				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="green" letter="Na" />
+					<Letter backgroundColor={GREEN} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 		</TransitionSeries>
@@ -171,7 +157,7 @@ const ClockTransitions: React.FC<{
 		<TransitionSeries style={{}}>
 			<TransitionSeries.Sequence durationInFrames={10 + startDelay}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="#3B82EB" letter="Na" />
+					<Letter backgroundColor={PINK} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
@@ -180,7 +166,7 @@ const ClockTransitions: React.FC<{
 			/>
 			<TransitionSeries.Sequence durationInFrames={10 + endDelay}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="#F5C3CB" letter="Na" />
+					<Letter backgroundColor={GREEN} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
@@ -189,16 +175,7 @@ const ClockTransitions: React.FC<{
 			/>
 			<TransitionSeries.Sequence durationInFrames={10 + delay3}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="red" letter="Na" />
-				</AbsoluteFill>
-			</TransitionSeries.Sequence>
-			<TransitionSeries.Transition
-				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-				presentation={clockWipe({width, height})}
-			/>
-			<TransitionSeries.Sequence durationInFrames={80}>
-				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="green" letter="Na" />
+					<Letter backgroundColor={BLUE} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 		</TransitionSeries>
@@ -214,7 +191,7 @@ const FadeTransitions: React.FC<{
 		<TransitionSeries style={{}}>
 			<TransitionSeries.Sequence durationInFrames={10 + startDelay}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="#3B82EB" letter="Na" />
+					<Letter backgroundColor={BLUE} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
@@ -223,7 +200,7 @@ const FadeTransitions: React.FC<{
 			/>
 			<TransitionSeries.Sequence durationInFrames={10 + endDelay}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="#F5C3CB" letter="Na" />
+					<Letter backgroundColor={GREEN} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
@@ -232,16 +209,7 @@ const FadeTransitions: React.FC<{
 			/>
 			<TransitionSeries.Sequence durationInFrames={10 + delay3}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="red" letter="Na" />
-				</AbsoluteFill>
-			</TransitionSeries.Sequence>
-			<TransitionSeries.Transition
-				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-				presentation={fade()}
-			/>
-			<TransitionSeries.Sequence durationInFrames={80}>
-				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor="green" letter="Na" />
+					<Letter backgroundColor={PINK} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 		</TransitionSeries>

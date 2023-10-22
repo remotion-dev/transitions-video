@@ -1,10 +1,13 @@
+import {fontFamily} from '@remotion/google-fonts/SofiaSansExtraCondensed';
 import {springTiming, TransitionSeries} from '@remotion/transitions';
 import React from 'react';
+import {BLUE, PINK} from './colors';
 import {flip} from './presentations/flip';
 
 const Title: React.FC<{
 	children: React.ReactNode;
-}> = ({children}) => {
+	color: string;
+}> = ({children, color}) => {
 	return (
 		<div
 			style={{
@@ -13,9 +16,10 @@ const Title: React.FC<{
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
-				fontSize: 100,
+				fontSize: 300,
 				fontWeight: 'bold',
-				fontFamily: 'sans-serif',
+				fontFamily,
+				color,
 			}}
 		>
 			<div>{children}</div>
@@ -33,28 +37,28 @@ export const IDontWannaWork4: React.FC = () => {
 				}}
 				durationInFrames={20}
 			>
-				<Title>I</Title>
+				<Title color={PINK}>I</Title>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
 				presentation={flip({direction: 'from-bottom', perspective: 1000})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={20}>
-				<Title>don't</Title>
+				<Title color={BLUE}>DON'T</Title>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
 				presentation={flip({direction: 'from-left', perspective: 1000})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={20}>
-				<Title>wanna</Title>
+				<Title color={PINK}>WANNA</Title>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
 				presentation={flip({direction: 'from-left', perspective: 1000})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={50}>
-				<Title>work</Title>
+				<Title color={BLUE}>WORK</Title>
 			</TransitionSeries.Sequence>
 		</TransitionSeries>
 	);

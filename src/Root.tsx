@@ -10,7 +10,12 @@ import {IDontWannaWork3} from './IDontWannaWork3';
 import {IDontWannaWork4} from './IDontWannaWork4';
 import {Lottery} from './Lottery';
 import {Main} from './Main';
+import {PackageManagers} from './PackageManagers';
 import {TextMask} from './TextMask';
+
+import {loadFont} from '@remotion/google-fonts/SofiaSansExtraCondensed';
+
+loadFont();
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -102,10 +107,19 @@ export const RemotionRoot: React.FC = () => {
 				fps={30}
 				width={1080}
 				height={1080}
+				defaultProps={{flipped: false}}
 			/>
 			<Composition
 				id="Different"
 				component={Different}
+				durationInFrames={400}
+				fps={30}
+				width={1080}
+				height={1080}
+			/>
+			<Composition
+				id="PackageManagers"
+				component={PackageManagers}
 				durationInFrames={400}
 				fps={30}
 				width={1080}

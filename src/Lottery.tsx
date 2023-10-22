@@ -2,10 +2,14 @@ import {springTiming, TransitionSeries} from '@remotion/transitions';
 import {AbsoluteFill} from 'remotion';
 import {slide} from '@remotion/transitions/slide';
 import React from 'react';
+import {fontFamily} from '@remotion/google-fonts/SofiaSansExtraCondensed';
+import {BLUE, PINK} from './colors';
 
 const delays = [4, 9, 18, 25];
 
-export const Lottery = () => {
+export const Lottery: React.FC<{
+	flipped: boolean;
+}> = ({flipped}) => {
 	return (
 		<AbsoluteFill
 			style={{
@@ -31,7 +35,7 @@ export const Lottery = () => {
 							verticalAlign: 'top',
 						}}
 					>
-						<Transitions key={i} startDelay={delays[i]} />
+						<Transitions key={i} flipped={flipped} startDelay={delays[i]} />
 					</div>
 				))}
 			</div>
@@ -41,12 +45,13 @@ export const Lottery = () => {
 
 const Transitions: React.FC<{
 	startDelay: number;
-}> = ({startDelay}) => {
+	flipped: boolean;
+}> = ({startDelay, flipped}) => {
 	return (
 		<AbsoluteFill
 			style={{
 				borderRadius: '50%',
-				fontSize: 100,
+				fontSize: 140,
 				color: 'white',
 				overflow: 'hidden',
 				fontFamily: 'sans-serif',
@@ -56,16 +61,18 @@ const Transitions: React.FC<{
 			<TransitionSeries style={{}}>
 				<TransitionSeries.Sequence durationInFrames={10 + startDelay}>
 					<AbsoluteFill style={{overflow: 'hidden'}}>
-						<Bubble backgroundColor="black">NA</Bubble>
+						<Bubble backgroundColor={flipped ? BLUE : PINK}> </Bubble>
 					</AbsoluteFill>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
 					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={slide({direction: 'from-right'})}
+					presentation={slide({
+						direction: flipped ? 'from-left' : 'from-right',
+					})}
 				/>
 				<TransitionSeries.Sequence durationInFrames={1000}>
 					<AbsoluteFill style={{overflow: 'hidden'}}>
-						<Bubble backgroundColor="red">NA</Bubble>
+						<Bubble backgroundColor={flipped ? PINK : BLUE}>NA</Bubble>
 					</AbsoluteFill>
 				</TransitionSeries.Sequence>
 			</TransitionSeries>
@@ -83,6 +90,7 @@ const Bubble: React.FC<{
 				backgroundColor,
 				justifyContent: 'center',
 				alignItems: 'center',
+				fontFamily,
 			}}
 		>
 			{children}

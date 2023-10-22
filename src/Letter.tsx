@@ -1,19 +1,23 @@
+import {fontFamily} from '@remotion/google-fonts/SofiaSansExtraCondensed';
 import {AbsoluteFill} from 'remotion';
 
 export const Letter: React.FC<{
 	letter: string;
 	backgroundColor: string;
-}> = ({backgroundColor, letter}) => {
+	color?: string;
+	borderRadius?: number;
+}> = ({backgroundColor, letter, color, borderRadius}) => {
 	return (
 		<AbsoluteFill
 			style={{
 				backgroundColor,
 				justifyContent: 'center',
 				alignItems: 'center',
-				color: 'white',
+				color: color ?? 'white',
 				fontSize: 250,
-				fontFamily: 'sans-serif',
-				fontWeight: 'bold',
+				fontFamily,
+				fontWeight: 'bolder',
+				borderRadius,
 				WebkitBackfaceVisibility: 'hidden',
 			}}
 		>
