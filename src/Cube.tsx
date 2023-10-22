@@ -11,10 +11,17 @@ export const CubeDemo: React.FC = () => {
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={linearTiming({durationInFrames: 40})}
-				presentation={cube()}
+				presentation={cube({direction: 'from-left', perspective: 1000})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={90}>
 				<AbsoluteFill style={{backgroundColor: 'blue'}} />
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={linearTiming({durationInFrames: 40})}
+				presentation={cube({direction: 'from-right', perspective: 1000})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={90}>
+				<AbsoluteFill style={{backgroundColor: 'green'}} />
 			</TransitionSeries.Sequence>
 		</TransitionSeries>
 	);
