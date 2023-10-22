@@ -1,5 +1,5 @@
-import {getBoundingBox, translatePath} from '@remotion/paths';
-import {makeCircle} from '@remotion/shapes';
+import {translatePath} from '@remotion/paths';
+import {makePie} from '@remotion/shapes';
 import type {TransitionPresentationComponentProps} from '@remotion/transitions';
 import React, {useMemo, useState} from 'react';
 import {AbsoluteFill, random} from 'remotion';
@@ -15,14 +15,16 @@ const SlidePresentation: React.FC<
 > = ({children, presentationDirection, presentationProgress, passedProps}) => {
 	const finishedRadius =
 		Math.sqrt(passedProps.width ** 2 + passedProps.height ** 2) / 2;
-	const {path} = makeCircle({
-		radius: finishedRadius * presentationProgress,
+
+	const {path} = makePie({
+		radius: finishedRadius,
+		progress: presentationProgress,
 	});
-	const boundingBox = getBoundingBox(path);
+
 	const translatedPath = translatePath(
 		path,
-		passedProps.width / 2 - boundingBox.width / 2,
-		passedProps.height / 2 - boundingBox.height / 2
+		-(finishedRadius * 2 - passedProps.width) / 2,
+		-(finishedRadius * 2 - passedProps.height) / 2
 	);
 
 	const [clipId] = useState(() => String(random(null)));
@@ -53,7 +55,7 @@ const SlidePresentation: React.FC<
 	);
 };
 
-export const circleWipe = (
+export const clockWipe = (
 	props: CustomPresentationProps
 ): TransitionPresentation<CustomPresentationProps> => {
 	return {component: SlidePresentation, props};

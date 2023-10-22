@@ -1,8 +1,9 @@
 import {linearTiming, TransitionSeries} from '@remotion/transitions';
 import React from 'react';
 import {AbsoluteFill, useVideoConfig} from 'remotion';
-import {circle} from './presentations/circle-wipe';
+import {circleWipe} from './presentations/circle-wipe';
 import {cube} from './presentations/cube';
+import {clockWipe} from './presentations/clock-wipe';
 
 export const CubeDemo: React.FC = () => {
 	const {height, width} = useVideoConfig();
@@ -42,10 +43,17 @@ export const CubeDemo: React.FC = () => {
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={linearTiming({durationInFrames: 40})}
-				presentation={circle({width, height})}
+				presentation={circleWipe({width, height})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={90}>
 				<AbsoluteFill style={{backgroundColor: 'pink'}} />
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={linearTiming({durationInFrames: 40})}
+				presentation={clockWipe({width, height})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={90}>
+				<AbsoluteFill style={{backgroundColor: 'yellow'}} />
 			</TransitionSeries.Sequence>
 		</TransitionSeries>
 	);
