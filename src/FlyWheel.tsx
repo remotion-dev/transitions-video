@@ -7,6 +7,7 @@ import {NanaGrid} from './Grid';
 import {IDontWannaWork} from './IDontWannaWork';
 import {IDontWannaWork2} from './IDontWannaWork2';
 import {IDontWannaWork3} from './IDontWannaWork3';
+import {IDontWannaWork4} from './IDontWannaWork4';
 import {Letter} from './Letter';
 import {Lottery} from './Lottery';
 import {cube} from './presentations/cube';
@@ -132,6 +133,13 @@ export const FlyWheel = () => {
 				/>
 				<TransitionSeries.Sequence durationInFrames={90}>
 					<Different />
+				</TransitionSeries.Sequence>
+				<TransitionSeries.Transition
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+					presentation={cube({direction: 'from-left', perspective: 1000})}
+				/>
+				<TransitionSeries.Sequence durationInFrames={90}>
+					<IDontWannaWork4 />
 				</TransitionSeries.Sequence>
 			</TransitionSeries>
 		</AbsoluteFill>

@@ -92,7 +92,12 @@ const Cube: React.FC<
 	}, [passedProps.direction, presentationDirection, presentationProgress]);
 
 	return (
-		<AbsoluteFill style={{perspective: passedProps.perspective}}>
+		<AbsoluteFill
+			style={{
+				perspective: passedProps.perspective,
+				transformStyle: 'preserve-3d',
+			}}
+		>
 			<AbsoluteFill style={style}>{children}</AbsoluteFill>
 		</AbsoluteFill>
 	);
