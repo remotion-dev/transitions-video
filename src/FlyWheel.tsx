@@ -6,6 +6,7 @@ import {NanaGrid} from './Grid';
 import {IDontWannaWork} from './IDontWannaWork';
 import {Letter} from './Letter';
 import {flywheel} from './presentations/flywheel';
+import {TextMask} from './TextMask';
 
 export const FlyWheel = () => {
 	return (
@@ -15,14 +16,14 @@ export const FlyWheel = () => {
 			}}
 		>
 			<TransitionSeries style={{}}>
-				<TransitionSeries.Sequence durationInFrames={30}>
+				<TransitionSeries.Sequence durationInFrames={25}>
 					<AbsoluteFill />
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
 					timing={springTiming({config: {damping: 200}, durationInFrames: 6})}
 					presentation={flywheel({anchor: 'left'})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={20}>
+				<TransitionSeries.Sequence durationInFrames={25}>
 					<Tile>
 						<Letter letter="Na Na" backgroundColor="orange" />
 					</Tile>
@@ -76,9 +77,18 @@ export const FlyWheel = () => {
 					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
 					presentation={slide({direction: 'from-top'})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={100}>
+				<TransitionSeries.Sequence durationInFrames={110}>
 					<Tile>
 						<NanaGrid />
+					</Tile>
+				</TransitionSeries.Sequence>
+				<TransitionSeries.Transition
+					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+					presentation={slide({direction: 'from-top'})}
+				/>
+				<TransitionSeries.Sequence durationInFrames={100}>
+					<Tile>
+						<TextMask />
 					</Tile>
 				</TransitionSeries.Sequence>
 			</TransitionSeries>
