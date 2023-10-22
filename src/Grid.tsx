@@ -6,7 +6,7 @@ import React from 'react';
 
 const delays = [4, 9, 18, 25];
 const endDelays = [30, 30, 30, 35];
-const delays3 = [40, 43, 26, 24];
+const delays3 = [40, 43, 26, 32];
 
 export const NanaGrid = () => {
 	return (

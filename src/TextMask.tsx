@@ -10,12 +10,14 @@ import {
 	useVideoConfig,
 } from 'remotion';
 import {loadFont} from './load-font';
+import {circleWipe} from './presentations/circle-wipe';
+import {clockWipe} from './presentations/clock-wipe';
 
 loadFont();
 
 export const TextMask: React.FC = () => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
+	const {fps, width, height} = useVideoConfig();
 	const scale = spring({
 		fps,
 		frame,
@@ -36,7 +38,7 @@ export const TextMask: React.FC = () => {
 			}}
 		>
 			<TransitionSeries>
-				<TransitionSeries.Sequence durationInFrames={32}>
+				<TransitionSeries.Sequence durationInFrames={37}>
 					<AbsoluteFill
 						style={{
 							backgroundColor: 'green',
@@ -48,10 +50,10 @@ export const TextMask: React.FC = () => {
 					/>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
 					presentation={slide()}
 				/>
-				<TransitionSeries.Sequence durationInFrames={20}>
+				<TransitionSeries.Sequence durationInFrames={30}>
 					<AbsoluteFill
 						style={{
 							backgroundColor: 'blue',
@@ -63,10 +65,10 @@ export const TextMask: React.FC = () => {
 					/>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
 					presentation={slide({direction: 'from-top'})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={17}>
+				<TransitionSeries.Sequence durationInFrames={27}>
 					<AbsoluteFill
 						style={{
 							backgroundColor: 'red',
@@ -78,10 +80,10 @@ export const TextMask: React.FC = () => {
 					/>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
 					presentation={slide({direction: 'from-bottom'})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={15}>
+				<TransitionSeries.Sequence durationInFrames={25}>
 					<AbsoluteFill
 						style={{
 							backgroundColor: 'yellow',
@@ -93,25 +95,10 @@ export const TextMask: React.FC = () => {
 					/>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={slide({direction: 'from-left'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={15}>
-					<AbsoluteFill
-						style={{
-							backgroundColor: 'orange',
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: 120,
-							fontFamily: 'Menhir',
-						}}
-					/>
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
 					presentation={wipe({direction: 'from-bottom-right'})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={15}>
+				<TransitionSeries.Sequence durationInFrames={25}>
 					<AbsoluteFill
 						style={{
 							backgroundColor: 'orange',
@@ -123,10 +110,25 @@ export const TextMask: React.FC = () => {
 					/>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={wipe({direction: 'from-bottom-left'})}
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+					presentation={wipe({direction: 'from-bottom-right'})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={20}>
+				<TransitionSeries.Sequence durationInFrames={25}>
+					<AbsoluteFill
+						style={{
+							backgroundColor: 'orange',
+							justifyContent: 'center',
+							alignItems: 'center',
+							fontSize: 120,
+							fontFamily: 'Menhir',
+						}}
+					/>
+				</TransitionSeries.Sequence>
+				<TransitionSeries.Transition
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+					presentation={wipe({direction: 'from-top-left'})}
+				/>
+				<TransitionSeries.Sequence durationInFrames={30}>
 					<AbsoluteFill
 						style={{
 							backgroundColor: 'black',
@@ -138,10 +140,11 @@ export const TextMask: React.FC = () => {
 					/>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={wipe({direction: 'from-bottom-left'})}
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+					presentation={circleWipe({height, width})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={20}>
+
+				<TransitionSeries.Sequence durationInFrames={30}>
 					<AbsoluteFill
 						style={{
 							backgroundColor: 'red',
@@ -153,10 +156,11 @@ export const TextMask: React.FC = () => {
 					/>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={wipe({direction: 'from-bottom-left'})}
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+					presentation={clockWipe({height, width})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={100}>
+
+				<TransitionSeries.Sequence durationInFrames={105}>
 					<AbsoluteFill
 						style={{
 							backgroundColor: 'purple',

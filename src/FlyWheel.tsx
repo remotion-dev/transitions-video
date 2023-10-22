@@ -4,6 +4,7 @@ import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {NanaGrid} from './Grid';
 import {IDontWannaWork} from './IDontWannaWork';
+import {IDontWannaWork2} from './IDontWannaWork2';
 import {Letter} from './Letter';
 import {flywheel} from './presentations/flywheel';
 import {TextMask} from './TextMask';
@@ -86,9 +87,18 @@ export const FlyWheel = () => {
 					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
 					presentation={slide({direction: 'from-top'})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={100}>
+				<TransitionSeries.Sequence durationInFrames={90}>
 					<Tile>
 						<TextMask />
+					</Tile>
+				</TransitionSeries.Sequence>
+				<TransitionSeries.Transition
+					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+					presentation={slide({direction: 'from-top'})}
+				/>
+				<TransitionSeries.Sequence durationInFrames={100}>
+					<Tile>
+						<IDontWannaWork2 />
 					</Tile>
 				</TransitionSeries.Sequence>
 			</TransitionSeries>

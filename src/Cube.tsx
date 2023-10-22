@@ -45,7 +45,7 @@ export const CubeDemo: React.FC = () => {
 				timing={linearTiming({durationInFrames: 40})}
 				presentation={circleWipe({width, height})}
 			/>
-			<TransitionSeries.Sequence durationInFrames={90}>
+			<TransitionSeries.Sequence durationInFrames={50}>
 				<AbsoluteFill style={{backgroundColor: 'pink'}} />
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
