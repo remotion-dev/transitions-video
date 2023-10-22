@@ -2,6 +2,7 @@ import {springTiming, TransitionSeries} from '@remotion/transitions';
 import {slide} from '@remotion/transitions/slide';
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
+import {Different} from './Different';
 import {NanaGrid} from './Grid';
 import {IDontWannaWork} from './IDontWannaWork';
 import {IDontWannaWork2} from './IDontWannaWork2';
@@ -122,8 +123,15 @@ export const FlyWheel = () => {
 					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
 					presentation={cube({direction: 'from-top', perspective: 1000})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={80}>
+				<TransitionSeries.Sequence durationInFrames={70}>
 					<IDontWannaWork3 />
+				</TransitionSeries.Sequence>
+				<TransitionSeries.Transition
+					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+					presentation={cube({direction: 'from-top', perspective: 1000})}
+				/>
+				<TransitionSeries.Sequence durationInFrames={90}>
+					<Different />
 				</TransitionSeries.Sequence>
 			</TransitionSeries>
 		</AbsoluteFill>

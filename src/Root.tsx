@@ -1,6 +1,7 @@
 import {Composition} from 'remotion';
 import {MyComposition} from './Composition';
 import {CubeDemo} from './Cube';
+import {Different} from './Different';
 import {FlyWheel} from './FlyWheel';
 import {NanaGrid} from './Grid';
 import {IDontWannaWork2} from './IDontWannaWork2';
@@ -79,6 +80,14 @@ export const RemotionRoot: React.FC = () => {
 			<Composition
 				id="Lottery"
 				component={Lottery}
+				durationInFrames={400}
+				fps={30}
+				width={1080}
+				height={1080}
+			/>
+			<Composition
+				id="Different"
+				component={Different}
 				durationInFrames={400}
 				fps={30}
 				width={1080}
