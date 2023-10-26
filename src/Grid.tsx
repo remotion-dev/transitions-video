@@ -28,13 +28,14 @@ export const NanaGrid = () => {
 					{new Array(4).fill(true).map((_, i) => (
 						<div
 							style={{
-								height: 540,
-								width: 540,
+								height: 530,
+								width: 530,
 								position: 'relative',
 								overflow: 'hidden',
 								display: 'inline-block',
 								marginBottom: 0,
 								verticalAlign: 'top',
+								margin: 5,
 							}}
 						>
 							<Transitions
@@ -60,7 +61,7 @@ export const NanaGrid = () => {
 					style={{
 						backgroundColor: BLUE,
 						fontFamily,
-						fontSize: 600,
+						fontSize: 700,
 						fontWeight: 'bold',
 						color: 'white',
 						justifyContent: 'center',
@@ -70,7 +71,7 @@ export const NanaGrid = () => {
 					NA
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
-					presentation={wipe({direction: 'from-bottom'})}
+					presentation={wipe({direction: 'from-left'})}
 					timing={springTiming({
 						config: {
 							damping: 200,
@@ -83,7 +84,7 @@ export const NanaGrid = () => {
 					style={{
 						backgroundColor: PINK,
 						fontFamily,
-						fontSize: 600,
+						fontSize: 700,
 						fontWeight: 'bold',
 						color: 'white',
 						justifyContent: 'center',

@@ -14,7 +14,7 @@ const Title: React.FC<{backgroundColor: string; color: string}> = ({
 				alignItems: 'center',
 				backgroundColor,
 				fontSize: 80,
-				fontFamily: 'sans-serif',
+				fontFamily: 'GT Planar',
 				fontWeight: 'bold',
 				color,
 			}}

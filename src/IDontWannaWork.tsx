@@ -8,28 +8,28 @@ export const IDontWannaWork: React.FC = () => {
 	return (
 		<TransitionSeries>
 			<TransitionSeries.Sequence durationInFrames={20}>
-				<Letter letter="I" backgroundColor={GREEN} />
+				<Letter fontSize={400} letter="I" backgroundColor={GREEN} />
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				presentation={wipe({direction: 'from-left'})}
 				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={20}>
-				<Letter letter="DON'T" backgroundColor={ORANGE} />
+				<Letter fontSize={400} letter="DON'T" backgroundColor={ORANGE} />
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				presentation={wipe({direction: 'from-right'})}
 				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={20}>
-				<Letter letter="WANNA" backgroundColor={BLUE} />
+				<Letter fontSize={400} letter="WANNA" backgroundColor={BLUE} />
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				presentation={wipe({direction: 'from-top-left'})}
 				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={80}>
-				<Letter letter="WORK" backgroundColor={PINK} />
+				<Letter fontSize={400} letter="WORK" backgroundColor={PINK} />
 			</TransitionSeries.Sequence>
 		</TransitionSeries>
 	);

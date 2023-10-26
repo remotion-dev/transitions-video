@@ -6,7 +6,8 @@ export const Letter: React.FC<{
 	backgroundColor: string;
 	color?: string;
 	borderRadius?: number;
-}> = ({backgroundColor, letter, color, borderRadius}) => {
+	fontSize?: number;
+}> = ({backgroundColor, letter, color, borderRadius, fontSize}) => {
 	return (
 		<AbsoluteFill
 			style={{
@@ -14,7 +15,7 @@ export const Letter: React.FC<{
 				justifyContent: 'center',
 				alignItems: 'center',
 				color: color ?? 'white',
-				fontSize: 250,
+				fontSize: fontSize ?? 250,
 				fontFamily,
 				fontWeight: 'bolder',
 				borderRadius,

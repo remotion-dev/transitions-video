@@ -20,14 +20,16 @@ export const Lottery: React.FC<{
 		>
 			<div
 				style={{
-					display: 'block',
+					display: 'flex',
+					flexDirection: 'row',
+					gap: 10,
 				}}
 			>
 				{new Array(4).fill(true).map((_, i) => (
 					<div
 						style={{
-							height: 270,
-							width: 270,
+							height: 240,
+							width: 240,
 							position: 'relative',
 							overflow: 'hidden',
 							display: 'inline-block',
