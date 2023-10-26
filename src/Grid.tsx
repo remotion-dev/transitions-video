@@ -4,8 +4,8 @@ import {slide} from '@remotion/transitions/slide';
 import {Letter} from './Letter';
 import React from 'react';
 import {wipe} from '@remotion/transitions/wipe';
-import {fontFamily} from '@remotion/google-fonts/SofiaSansExtraCondensed';
 import {BLUE, GREEN, PINK} from './colors';
+import {fontFamily} from './font';
 
 const delays = [4, 9, 18, 25];
 const endDelays = [30, 30, 30, 35];

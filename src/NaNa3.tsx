@@ -1,8 +1,8 @@
 import {useCurrentFrame} from 'remotion';
 import {AbsoluteFill} from 'remotion';
 import React from 'react';
-import {fontFamily} from '@remotion/google-fonts/SofiaSansExtraCondensed';
 import {GREEN} from './colors';
+import {fontFamily} from './font';
 
 export const NaNa3: React.FC = () => {
 	const frame = useCurrentFrame();

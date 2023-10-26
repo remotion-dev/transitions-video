@@ -2,8 +2,8 @@ import {springTiming, TransitionSeries} from '@remotion/transitions';
 import {AbsoluteFill} from 'remotion';
 import {slide} from '@remotion/transitions/slide';
 import React from 'react';
-import {fontFamily} from '@remotion/google-fonts/SofiaSansExtraCondensed';
 import {BLUE, PINK} from './colors';
+import {fontFamily} from './font';
 
 const delays = [4, 9, 18, 25];
 

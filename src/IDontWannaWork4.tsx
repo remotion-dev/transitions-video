@@ -1,7 +1,7 @@
-import {fontFamily} from '@remotion/google-fonts/SofiaSansExtraCondensed';
 import {springTiming, TransitionSeries} from '@remotion/transitions';
 import React from 'react';
 import {BLUE, PINK} from './colors';
+import {fontFamily} from './font';
 import {flip} from './presentations/flip';
 
 const Title: React.FC<{

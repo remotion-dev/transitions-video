@@ -2,8 +2,8 @@ import {useCurrentFrame} from 'remotion';
 import {useVideoConfig} from 'remotion';
 import {AbsoluteFill, spring} from 'remotion';
 import React from 'react';
-import {fontFamily} from '@remotion/google-fonts/SofiaSansExtraCondensed';
 import {BLUE} from './colors';
+import {fontFamily} from './font';
 
 export const NaNa1: React.FC = () => {
 	const {fps} = useVideoConfig();

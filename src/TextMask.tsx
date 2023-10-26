@@ -43,10 +43,6 @@ export const TextMask: React.FC = () => {
 					<AbsoluteFill
 						style={{
 							backgroundColor: GREEN,
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: 120,
-							fontFamily: 'Menhir',
 						}}
 					/>
 				</TransitionSeries.Sequence>
@@ -58,10 +54,6 @@ export const TextMask: React.FC = () => {
 					<AbsoluteFill
 						style={{
 							backgroundColor: BLUE,
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: 120,
-							fontFamily: 'Menhir',
 						}}
 					/>
 				</TransitionSeries.Sequence>
@@ -73,10 +65,6 @@ export const TextMask: React.FC = () => {
 					<AbsoluteFill
 						style={{
 							backgroundColor: PINK,
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: 120,
-							fontFamily: 'Menhir',
 						}}
 					/>
 				</TransitionSeries.Sequence>
@@ -88,10 +76,6 @@ export const TextMask: React.FC = () => {
 					<AbsoluteFill
 						style={{
 							backgroundColor: ORANGE,
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: 120,
-							fontFamily: 'Menhir',
 						}}
 					/>
 				</TransitionSeries.Sequence>
@@ -103,10 +87,6 @@ export const TextMask: React.FC = () => {
 					<AbsoluteFill
 						style={{
 							backgroundColor: BLUE,
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: 120,
-							fontFamily: 'Menhir',
 						}}
 					/>
 				</TransitionSeries.Sequence>
@@ -118,10 +98,6 @@ export const TextMask: React.FC = () => {
 					<AbsoluteFill
 						style={{
 							backgroundColor: PINK,
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: 120,
-							fontFamily: 'Menhir',
 						}}
 					/>
 				</TransitionSeries.Sequence>
@@ -133,10 +109,6 @@ export const TextMask: React.FC = () => {
 					<AbsoluteFill
 						style={{
 							backgroundColor: GREEN,
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: 120,
-							fontFamily: 'Menhir',
 						}}
 					/>
 				</TransitionSeries.Sequence>
@@ -149,10 +121,6 @@ export const TextMask: React.FC = () => {
 					<AbsoluteFill
 						style={{
 							backgroundColor: ORANGE,
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: 120,
-							fontFamily: 'Menhir',
 						}}
 					/>
 				</TransitionSeries.Sequence>
@@ -165,10 +133,6 @@ export const TextMask: React.FC = () => {
 					<AbsoluteFill
 						style={{
 							backgroundColor: PINK,
-							justifyContent: 'center',
-							alignItems: 'center',
-							fontSize: 120,
-							fontFamily: 'Menhir',
 						}}
 					/>
 				</TransitionSeries.Sequence>

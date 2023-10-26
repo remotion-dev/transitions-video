@@ -17,7 +17,7 @@ const Title: React.FC<{
 				alignItems: 'center',
 				backgroundColor,
 				fontSize: 70,
-				fontFamily: 'GT Planar',
+				fontFamily: 'GT Planar, sans-serif',
 				fontWeight: 'bold',
 				color,
 			}}

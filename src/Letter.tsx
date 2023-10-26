@@ -1,5 +1,5 @@
-import {fontFamily} from '@remotion/google-fonts/SofiaSansExtraCondensed';
 import {AbsoluteFill} from 'remotion';
+import {fontFamily} from './font';
 
 export const Letter: React.FC<{
 	letter: string;
