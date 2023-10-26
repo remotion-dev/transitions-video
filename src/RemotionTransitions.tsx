@@ -2,24 +2,26 @@ import {springTiming, TransitionSeries} from '@remotion/transitions';
 import {wipe} from '@remotion/transitions/wipe';
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
+import {flip} from './presentations/flip';
 
-const Title: React.FC<{backgroundColor: string; color: string}> = ({
-	backgroundColor,
-	color,
-}) => {
+const Title: React.FC<{
+	backgroundColor: string;
+	color: string;
+	children: React.ReactNode;
+}> = ({backgroundColor, color, children}) => {
 	return (
 		<AbsoluteFill
 			style={{
 				justifyContent: 'center',
 				alignItems: 'center',
 				backgroundColor,
-				fontSize: 80,
+				fontSize: 70,
 				fontFamily: 'GT Planar',
 				fontWeight: 'bold',
 				color,
 			}}
 		>
-			@remotion/transitions
+			{children}
 		</AbsoluteFill>
 	);
 };
@@ -27,8 +29,10 @@ const Title: React.FC<{backgroundColor: string; color: string}> = ({
 export const RemotionTransitions: React.FC = () => {
 	return (
 		<TransitionSeries>
-			<TransitionSeries.Sequence durationInFrames={20}>
-				<Title color="pink" backgroundColor="#0b84f3" />
+			<TransitionSeries.Sequence durationInFrames={15}>
+				<Title color="pink" backgroundColor="#0b84f3">
+					@remotion/transitions
+				</Title>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				presentation={wipe({direction: 'from-top-left'})}
@@ -40,7 +44,9 @@ export const RemotionTransitions: React.FC = () => {
 				})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={20}>
-				<Title color="white" backgroundColor="#0b84f3" />
+				<Title color="white" backgroundColor="#0b84f3">
+					@remotion/transitions
+				</Title>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				presentation={wipe({direction: 'from-top-right'})}
@@ -52,7 +58,9 @@ export const RemotionTransitions: React.FC = () => {
 				})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={20}>
-				<Title color="white" backgroundColor="pink" />
+				<Title color="white" backgroundColor="pink">
+					@remotion/transitions
+				</Title>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				presentation={wipe({direction: 'from-bottom-left'})}
@@ -63,8 +71,10 @@ export const RemotionTransitions: React.FC = () => {
 					durationInFrames: 10,
 				})}
 			/>
-			<TransitionSeries.Sequence durationInFrames={25}>
-				<Title color="rgba(0, 0, 0, 0.2)" backgroundColor="white" />
+			<TransitionSeries.Sequence durationInFrames={35}>
+				<Title color="rgba(0, 0, 0, 0.2)" backgroundColor="white">
+					@remotion/transitions
+				</Title>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				presentation={wipe({direction: 'from-left'})}
@@ -72,11 +82,30 @@ export const RemotionTransitions: React.FC = () => {
 					config: {
 						damping: 200,
 					},
-					durationInFrames: 10,
+					durationInFrames: 30,
+				})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={90}>
+				<Title color="black" backgroundColor="white">
+					@remotion/transitions
+				</Title>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				presentation={flip({
+					direction: 'from-left',
+					perspective: 1000,
+				})}
+				timing={springTiming({
+					config: {
+						damping: 200,
+					},
+					durationInFrames: 30,
 				})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={120}>
-				<Title color="black" backgroundColor="white" />
+				<Title color="black" backgroundColor="white">
+					remotion.dev/transitions
+				</Title>
 			</TransitionSeries.Sequence>
 		</TransitionSeries>
 	);

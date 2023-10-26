@@ -60,9 +60,14 @@ const Transitions: React.FC<{
 				fontWeight: 'bold',
 			}}
 		>
-			<TransitionSeries style={{}}>
+			<TransitionSeries style={{backgroundColor: flipped ? PINK : BLUE}}>
 				<TransitionSeries.Sequence durationInFrames={10 + startDelay}>
-					<AbsoluteFill style={{overflow: 'hidden'}}>
+					<AbsoluteFill
+						style={{
+							overflow: 'hidden',
+							borderRadius: '50%',
+						}}
+					>
 						<Bubble backgroundColor={flipped ? BLUE : PINK}> </Bubble>
 					</AbsoluteFill>
 				</TransitionSeries.Sequence>
@@ -73,7 +78,12 @@ const Transitions: React.FC<{
 					})}
 				/>
 				<TransitionSeries.Sequence durationInFrames={1000}>
-					<AbsoluteFill style={{overflow: 'hidden'}}>
+					<AbsoluteFill
+						style={{
+							overflow: 'hidden',
+							borderRadius: '50%',
+						}}
+					>
 						<Bubble backgroundColor={flipped ? PINK : BLUE}>NA</Bubble>
 					</AbsoluteFill>
 				</TransitionSeries.Sequence>
@@ -93,6 +103,7 @@ const Bubble: React.FC<{
 				justifyContent: 'center',
 				alignItems: 'center',
 				fontFamily,
+				borderRadius: '50%',
 			}}
 		>
 			{children}

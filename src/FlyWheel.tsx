@@ -1,7 +1,13 @@
 import {springTiming, TransitionSeries} from '@remotion/transitions';
 import {slide} from '@remotion/transitions/slide';
 import React from 'react';
-import {AbsoluteFill, Img} from 'remotion';
+import {
+	AbsoluteFill,
+	Img,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 import {Different} from './Different';
 import {NanaGrid} from './Grid';
 import {IDontWannaWork} from './IDontWannaWork';
@@ -19,8 +25,12 @@ import {NaNa1} from './NaNa1';
 import {NaNa2} from './NaNa2';
 import {NaNa3} from './NaNa3';
 import {ThreeBythree} from './ThreeByThree';
+import {RemotionTransitions} from './RemotionTransitions';
 
 export const FlyWheel = () => {
+	const frame = useCurrentFrame();
+	const {fps} = useVideoConfig();
+	const spr = spring({fps, frame, durationInFrames: 20});
 	return (
 		<AbsoluteFill
 			style={{
@@ -28,7 +38,7 @@ export const FlyWheel = () => {
 			}}
 		>
 			<TransitionSeries style={{}}>
-				<TransitionSeries.Sequence durationInFrames={25}>
+				<TransitionSeries.Sequence durationInFrames={45}>
 					<AbsoluteFill
 						style={{
 							justifyContent: 'center',
@@ -36,7 +46,7 @@ export const FlyWheel = () => {
 						}}
 					>
 						<Img
-							style={{height: 300}}
+							style={{height: 300, scale: String(spr)}}
 							src="https://github.com/remotion-dev/brand/raw/main/withouttitle/element-0.png"
 						/>
 					</AbsoluteFill>
@@ -183,10 +193,17 @@ export const FlyWheel = () => {
 					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
 					presentation={cube({direction: 'from-left', perspective: 1000})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={300}>
+				<TransitionSeries.Sequence durationInFrames={88}>
 					<Tile noOverflow>
 						<ThreeBythree />
 					</Tile>
+				</TransitionSeries.Sequence>
+				<TransitionSeries.Transition
+					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+					presentation={slide({direction: 'from-top'})}
+				/>
+				<TransitionSeries.Sequence durationInFrames={300}>
+					<RemotionTransitions />
 				</TransitionSeries.Sequence>
 			</TransitionSeries>
 		</AbsoluteFill>
