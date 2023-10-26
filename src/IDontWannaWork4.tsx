@@ -55,7 +55,7 @@ export const IDontWannaWork4: React.FC = () => {
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-				presentation={flip({direction: 'from-left', perspective: 1000})}
+				presentation={flip({direction: 'from-right', perspective: 1000})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={50}>
 				<Title color={BLUE}>WORK</Title>

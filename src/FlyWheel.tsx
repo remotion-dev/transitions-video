@@ -15,7 +15,10 @@ import {flywheel} from './presentations/flywheel';
 import {TextMask} from './TextMask';
 import {fontFamily} from '@remotion/google-fonts/SofiaSansExtraCondensed';
 import {flip} from './presentations/flip';
-import {BLUE, GREEN, PINK} from './colors';
+import {BLUE, PINK} from './colors';
+import {NaNa1} from './NaNa1';
+import {NaNa2} from './NaNa2';
+import {NaNa3} from './NaNa3';
 
 export const FlyWheel = () => {
 	return (
@@ -44,19 +47,7 @@ export const FlyWheel = () => {
 				/>
 				<TransitionSeries.Sequence durationInFrames={25}>
 					<Tile>
-						<AbsoluteFill
-							style={{
-								justifyContent: 'center',
-								alignItems: 'center',
-								fontFamily,
-								fontSize: 400,
-								color: 'white',
-								backgroundColor: BLUE,
-								fontWeight: 'bolder',
-							}}
-						>
-							NA NA
-						</AbsoluteFill>
+						<NaNa1 />
 					</Tile>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
@@ -65,19 +56,7 @@ export const FlyWheel = () => {
 				/>
 				<TransitionSeries.Sequence durationInFrames={25}>
 					<Tile>
-						<AbsoluteFill
-							style={{
-								justifyContent: 'center',
-								alignItems: 'center',
-								fontFamily,
-								fontSize: 400,
-								color: 'white',
-								backgroundColor: PINK,
-								fontWeight: 'bolder',
-							}}
-						>
-							NA NA
-						</AbsoluteFill>{' '}
+						<NaNa2 />
 					</Tile>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
@@ -86,19 +65,7 @@ export const FlyWheel = () => {
 				/>
 				<TransitionSeries.Sequence durationInFrames={25}>
 					<Tile>
-						<AbsoluteFill
-							style={{
-								justifyContent: 'center',
-								alignItems: 'center',
-								fontFamily,
-								fontSize: 400,
-								color: 'white',
-								backgroundColor: GREEN,
-								fontWeight: 'bolder',
-							}}
-						>
-							NA NA
-						</AbsoluteFill>{' '}
+						<NaNa3 />
 					</Tile>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
@@ -112,13 +79,13 @@ export const FlyWheel = () => {
 								justifyContent: 'center',
 								alignItems: 'center',
 								fontFamily,
-								fontSize: 400,
+								fontSize: 500,
 								color: 'white',
 								backgroundColor: PINK,
 								fontWeight: 'bolder',
 							}}
 						>
-							NA NA
+							NA
 						</AbsoluteFill>{' '}
 					</Tile>
 				</TransitionSeries.Sequence>
@@ -133,13 +100,13 @@ export const FlyWheel = () => {
 								justifyContent: 'center',
 								alignItems: 'center',
 								fontFamily,
-								fontSize: 400,
+								fontSize: 500,
 								color: 'white',
 								backgroundColor: BLUE,
 								fontWeight: 'bolder',
 							}}
 						>
-							NA NA
+							NA
 						</AbsoluteFill>{' '}
 					</Tile>
 				</TransitionSeries.Sequence>
@@ -199,10 +166,10 @@ export const FlyWheel = () => {
 					<IDontWannaWork3 />
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
 					presentation={cube({direction: 'from-top', perspective: 1000})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={90}>
+				<TransitionSeries.Sequence durationInFrames={80}>
 					<Different />
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition

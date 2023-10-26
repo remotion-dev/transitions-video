@@ -11,17 +11,17 @@
   "repository": {},
   "license": "UNLICENSED",
   "dependencies": {
-    "@remotion/cli": "4.0.53",
-    "@remotion/google-fonts": "^4.0.53",
-    "@remotion/paths": "^4.0.53",
-    "@remotion/shapes": "^4.0.53",
+    "@remotion/cli": "4.0.54",
+    "@remotion/google-fonts": "4.0.54",
+    "@remotion/paths": "4.0.54",
+    "@remotion/shapes": "4.0.54",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "remotion": "4.0.53"
+    "remotion": "4.0.54"
   },
   "devDependencies": {
-    "@remotion/eslint-config": "4.0.53",
-    "@remotion/transitions": "4.0.53",
+    "@remotion/eslint-config": "4.0.54",
+    "@remotion/transitions": "4.0.54",
     "@types/react": "^18.0.26",
     "@types/web": "^0.0.86",
     "eslint": "^8.43.0",

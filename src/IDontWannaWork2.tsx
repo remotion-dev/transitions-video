@@ -11,7 +11,12 @@ export const IDontWannaWork2: React.FC = () => {
 			}}
 		>
 			<TransitionSeries.Sequence durationInFrames={20}>
-				<Letter borderRadius={40} backgroundColor={BLUE} letter="I" />
+				<Letter
+					fontSize={350}
+					borderRadius={40}
+					backgroundColor={BLUE}
+					letter="I"
+				/>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({
@@ -23,7 +28,12 @@ export const IDontWannaWork2: React.FC = () => {
 				presentation={cube({direction: 'from-left', perspective: 1000})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={20}>
-				<Letter borderRadius={40} backgroundColor={GREEN} letter="DONT" />
+				<Letter
+					fontSize={350}
+					borderRadius={40}
+					backgroundColor={GREEN}
+					letter="DONT"
+				/>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({
@@ -35,7 +45,12 @@ export const IDontWannaWork2: React.FC = () => {
 				presentation={cube({direction: 'from-top', perspective: 1000})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={20}>
-				<Letter borderRadius={40} backgroundColor={ORANGE} letter="WANNA" />
+				<Letter
+					fontSize={350}
+					borderRadius={40}
+					backgroundColor={ORANGE}
+					letter="WANNA"
+				/>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({
@@ -47,7 +62,12 @@ export const IDontWannaWork2: React.FC = () => {
 				presentation={cube({direction: 'from-right', perspective: 1000})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={50}>
-				<Letter borderRadius={40} backgroundColor={PINK} letter="WORK" />
+				<Letter
+					fontSize={350}
+					borderRadius={40}
+					backgroundColor={PINK}
+					letter="WORK"
+				/>
 			</TransitionSeries.Sequence>
 		</TransitionSeries>
 	);
