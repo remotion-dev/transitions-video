@@ -3,7 +3,7 @@ import {
 	springTiming,
 	TransitionSeries,
 } from '@remotion/transitions';
-import {AbsoluteFill, Loop} from 'remotion';
+import {AbsoluteFill} from 'remotion';
 import {slide} from '@remotion/transitions/slide';
 import {fade} from '@remotion/transitions/fade';
 import {Letter} from './Letter';

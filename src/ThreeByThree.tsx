@@ -107,7 +107,7 @@ const Transitions: React.FC<{
 		<TransitionSeries style={{borderRadius: 20, overflow: 'hidden'}}>
 			<TransitionSeries.Sequence durationInFrames={8 + firstFlip}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor={GREEN} letter="" />
+					<Letter fontSize={160} backgroundColor={GREEN} letter="" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
@@ -116,7 +116,7 @@ const Transitions: React.FC<{
 			/>
 			<TransitionSeries.Sequence durationInFrames={8 + secondFlip}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor={PINK} letter="NA" />
+					<Letter fontSize={160} backgroundColor={PINK} letter="NA" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
@@ -125,7 +125,7 @@ const Transitions: React.FC<{
 			/>
 			<TransitionSeries.Sequence durationInFrames={20000}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
-					<Letter backgroundColor={GREEN} letter="" />
+					<Letter fontSize={160} backgroundColor={GREEN} letter="" />
 				</AbsoluteFill>
 			</TransitionSeries.Sequence>
 		</TransitionSeries>

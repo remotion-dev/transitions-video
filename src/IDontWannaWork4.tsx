@@ -16,10 +16,11 @@ const Title: React.FC<{
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
-				fontSize: 300,
+				fontSize: 200,
 				fontWeight: 'bold',
 				fontFamily,
 				color,
+				fontVariationSettings: `"wght" 900, "wdth" 125`,
 			}}
 		>
 			<div>{children}</div>

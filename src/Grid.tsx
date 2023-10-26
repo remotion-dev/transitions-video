@@ -61,11 +61,12 @@ export const NanaGrid = () => {
 					style={{
 						backgroundColor: BLUE,
 						fontFamily,
-						fontSize: 700,
+						fontSize: 500,
 						fontWeight: 'bold',
 						color: 'white',
 						justifyContent: 'center',
 						alignItems: 'center',
+						fontVariationSettings: `"wght" 900, "wdth" 125`,
 					}}
 				>
 					NA
@@ -84,11 +85,12 @@ export const NanaGrid = () => {
 					style={{
 						backgroundColor: PINK,
 						fontFamily,
-						fontSize: 700,
+						fontSize: 500,
 						fontWeight: 'bold',
 						color: 'white',
 						justifyContent: 'center',
 						alignItems: 'center',
+						fontVariationSettings: `"wght" 900, "wdth" 125`,
 					}}
 				>
 					NA

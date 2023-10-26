@@ -15,11 +15,12 @@ export const Letter: React.FC<{
 				justifyContent: 'center',
 				alignItems: 'center',
 				color: color ?? 'white',
-				fontSize: fontSize ?? 250,
+				fontSize: fontSize ?? 200,
 				fontFamily,
 				fontWeight: 'bolder',
 				borderRadius,
 				WebkitBackfaceVisibility: 'hidden',
+				fontVariationSettings: `"wght" 900, "wdth" 125`,
 			}}
 		>
 			{letter}

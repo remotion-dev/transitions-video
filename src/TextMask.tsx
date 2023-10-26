@@ -10,11 +10,8 @@ import {
 	useVideoConfig,
 } from 'remotion';
 import {BLUE, GREEN, ORANGE, PINK} from './colors';
-import {loadFont} from './load-font';
 import {circleWipe} from './presentations/circle-wipe';
 import {clockWipe} from './presentations/clock-wipe';
-
-loadFont();
 
 export const TextMask: React.FC = () => {
 	const frame = useCurrentFrame();

@@ -89,10 +89,11 @@ export const FlyWheel = () => {
 								justifyContent: 'center',
 								alignItems: 'center',
 								fontFamily,
-								fontSize: 500,
+								fontSize: 450,
 								color: 'white',
 								backgroundColor: PINK,
 								fontWeight: 'bolder',
+								fontVariationSettings: `"wght" 900, "wdth" 125`,
 							}}
 						>
 							NA
@@ -110,10 +111,11 @@ export const FlyWheel = () => {
 								justifyContent: 'center',
 								alignItems: 'center',
 								fontFamily,
-								fontSize: 500,
+								fontSize: 450,
 								color: 'white',
 								backgroundColor: BLUE,
 								fontWeight: 'bolder',
+								fontVariationSettings: `"wght" 900, "wdth" 125`,
 							}}
 						>
 							NA

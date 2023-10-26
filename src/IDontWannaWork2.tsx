@@ -12,7 +12,7 @@ export const IDontWannaWork2: React.FC = () => {
 		>
 			<TransitionSeries.Sequence durationInFrames={20}>
 				<Letter
-					fontSize={350}
+					fontSize={600}
 					borderRadius={40}
 					backgroundColor={BLUE}
 					letter="I"
@@ -29,7 +29,7 @@ export const IDontWannaWork2: React.FC = () => {
 			/>
 			<TransitionSeries.Sequence durationInFrames={20}>
 				<Letter
-					fontSize={350}
+					fontSize={300}
 					borderRadius={40}
 					backgroundColor={GREEN}
 					letter="DONT"
@@ -46,7 +46,7 @@ export const IDontWannaWork2: React.FC = () => {
 			/>
 			<TransitionSeries.Sequence durationInFrames={20}>
 				<Letter
-					fontSize={350}
+					fontSize={220}
 					borderRadius={40}
 					backgroundColor={ORANGE}
 					letter="WANNA"
@@ -63,7 +63,7 @@ export const IDontWannaWork2: React.FC = () => {
 			/>
 			<TransitionSeries.Sequence durationInFrames={50}>
 				<Letter
-					fontSize={350}
+					fontSize={250}
 					borderRadius={40}
 					backgroundColor={PINK}
 					letter="WORK"

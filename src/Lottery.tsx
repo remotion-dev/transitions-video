@@ -53,11 +53,12 @@ const Transitions: React.FC<{
 		<AbsoluteFill
 			style={{
 				borderRadius: '50%',
-				fontSize: 140,
+				fontSize: 100,
 				color: 'white',
 				overflow: 'hidden',
 				fontFamily: 'sans-serif',
 				fontWeight: 'bold',
+				fontVariationSettings: `"wght" 900, "wdth" 125`,
 			}}
 		>
 			<TransitionSeries style={{backgroundColor: flipped ? PINK : BLUE}}>

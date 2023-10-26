@@ -86,7 +86,7 @@ export const RemotionTransitions: React.FC = () => {
 					durationInFrames: 30,
 				})}
 			/>
-			<TransitionSeries.Sequence durationInFrames={95}>
+			<TransitionSeries.Sequence durationInFrames={80}>
 				<Title color="black" backgroundColor="white">
 					@remotion/transitions
 				</Title>

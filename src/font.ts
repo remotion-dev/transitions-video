@@ -1,1 +1,5 @@
-export {fontFamily} from '@remotion/google-fonts/SofiaSansExtraCondensed';
+import {loadFont} from './load';
+
+loadFont();
+
+export const fontFamily = 'Mona Sans';

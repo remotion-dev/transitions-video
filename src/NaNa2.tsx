@@ -12,10 +12,11 @@ export const NaNa2: React.FC = () => {
 				justifyContent: 'center',
 				alignItems: 'center',
 				fontFamily,
-				fontSize: 400,
+				fontSize: 250,
 				color: 'white',
 				backgroundColor: PINK,
 				fontWeight: 'bolder',
+				fontVariationSettings: `"wght" 900, "wdth" 125`,
 			}}
 		>
 			NA {frame < 10 ? '' : 'NA'}
