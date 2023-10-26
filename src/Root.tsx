@@ -10,7 +10,7 @@ import {IDontWannaWork3} from './IDontWannaWork3';
 import {IDontWannaWork4} from './IDontWannaWork4';
 import {Lottery} from './Lottery';
 import {Main} from './Main';
-import {PackageManagers} from './PackageManagers';
+import {ThreeBythree} from './ThreeByThree';
 import {TextMask} from './TextMask';
 
 import {loadFont} from '@remotion/google-fonts/SofiaSansExtraCondensed';
@@ -119,7 +119,7 @@ export const RemotionRoot: React.FC = () => {
 			/>
 			<Composition
 				id="PackageManagers"
-				component={PackageManagers}
+				component={ThreeBythree}
 				durationInFrames={400}
 				fps={30}
 				width={1080}

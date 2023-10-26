@@ -9,7 +9,6 @@ import {IDontWannaWork2} from './IDontWannaWork2';
 import {IDontWannaWork3} from './IDontWannaWork3';
 import {IDontWannaWork4} from './IDontWannaWork4';
 import {Lottery} from './Lottery';
-import {PackageManagers} from './PackageManagers';
 import {cube} from './presentations/cube';
 import {flywheel} from './presentations/flywheel';
 import {TextMask} from './TextMask';
@@ -19,6 +18,7 @@ import {BLUE, PINK} from './colors';
 import {NaNa1} from './NaNa1';
 import {NaNa2} from './NaNa2';
 import {NaNa3} from './NaNa3';
+import {ThreeBythree} from './ThreeByThree';
 
 export const FlyWheel = () => {
 	return (
@@ -184,16 +184,27 @@ export const FlyWheel = () => {
 					presentation={cube({direction: 'from-left', perspective: 1000})}
 				/>
 				<TransitionSeries.Sequence durationInFrames={300}>
-					<PackageManagers />
+					<Tile noOverflow>
+						<ThreeBythree />
+					</Tile>
 				</TransitionSeries.Sequence>
 			</TransitionSeries>
 		</AbsoluteFill>
 	);
 };
 
-const Tile: React.FC<{children: React.ReactNode}> = ({children}) => {
+const Tile: React.FC<{children: React.ReactNode; noOverflow?: boolean}> = ({
+	children,
+	noOverflow,
+}) => {
 	return (
-		<AbsoluteFill style={{scale: '0.8', borderRadius: 50, overflow: 'hidden'}}>
+		<AbsoluteFill
+			style={{
+				scale: '0.8',
+				borderRadius: 50,
+				overflow: noOverflow ? 'visible' : 'hidden',
+			}}
+		>
 			{children}
 		</AbsoluteFill>
 	);
