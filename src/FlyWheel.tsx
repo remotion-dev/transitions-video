@@ -193,7 +193,7 @@ export const FlyWheel = () => {
 					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
 					presentation={cube({direction: 'from-left', perspective: 1000})}
 				/>
-				<TransitionSeries.Sequence durationInFrames={88}>
+				<TransitionSeries.Sequence durationInFrames={85}>
 					<Tile noOverflow>
 						<ThreeBythree />
 					</Tile>

@@ -2,6 +2,7 @@ import {springTiming, TransitionSeries} from '@remotion/transitions';
 import {wipe} from '@remotion/transitions/wipe';
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
+import {GREEN, PINK} from './colors';
 import {flip} from './presentations/flip';
 
 const Title: React.FC<{
@@ -30,7 +31,7 @@ export const RemotionTransitions: React.FC = () => {
 	return (
 		<TransitionSeries>
 			<TransitionSeries.Sequence durationInFrames={15}>
-				<Title color="pink" backgroundColor="#0b84f3">
+				<Title color={PINK} backgroundColor={GREEN}>
 					@remotion/transitions
 				</Title>
 			</TransitionSeries.Sequence>
@@ -43,7 +44,7 @@ export const RemotionTransitions: React.FC = () => {
 					durationInFrames: 10,
 				})}
 			/>
-			<TransitionSeries.Sequence durationInFrames={20}>
+			<TransitionSeries.Sequence durationInFrames={15}>
 				<Title color="white" backgroundColor="#0b84f3">
 					@remotion/transitions
 				</Title>
@@ -58,7 +59,7 @@ export const RemotionTransitions: React.FC = () => {
 				})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={20}>
-				<Title color="white" backgroundColor="pink">
+				<Title color="white" backgroundColor={PINK}>
 					@remotion/transitions
 				</Title>
 			</TransitionSeries.Sequence>
@@ -85,7 +86,7 @@ export const RemotionTransitions: React.FC = () => {
 					durationInFrames: 30,
 				})}
 			/>
-			<TransitionSeries.Sequence durationInFrames={90}>
+			<TransitionSeries.Sequence durationInFrames={95}>
 				<Title color="black" backgroundColor="white">
 					@remotion/transitions
 				</Title>
