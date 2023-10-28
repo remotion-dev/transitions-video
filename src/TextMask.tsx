@@ -4,6 +4,7 @@ import {wipe} from '@remotion/transitions/wipe';
 import React from 'react';
 import {
 	AbsoluteFill,
+	interpolate,
 	spring,
 	staticFile,
 	useCurrentFrame,
@@ -16,15 +17,19 @@ import {clockWipe} from './presentations/clock-wipe';
 export const TextMask: React.FC = () => {
 	const frame = useCurrentFrame();
 	const {fps, width, height} = useVideoConfig();
-	const scale = spring({
-		fps,
-		frame,
-		config: {
-			damping: 200,
-		},
-		delay: 14,
-		durationInFrames: 10,
-	});
+
+	const scale =
+		spring({
+			fps,
+			frame,
+			config: {
+				damping: 200,
+			},
+			delay: 14,
+			durationInFrames: 10,
+		}) *
+			0.9 +
+		interpolate(frame, [0, 100], [0, 0.1]);
 
 	return (
 		<AbsoluteFill

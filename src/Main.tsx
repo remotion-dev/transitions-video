@@ -9,6 +9,9 @@ export const Main: React.FC = () => {
 			<Sequence from={20}>
 				<Audio src={staticFile('idontwannawork.wav')} />
 			</Sequence>
+			<Sequence from={760}>
+				<Audio src={staticFile('whip.mp3')} />
+			</Sequence>
 			<FlyWheel />
 		</AbsoluteFill>
 	);
