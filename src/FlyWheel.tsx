@@ -19,196 +19,182 @@ import {cube} from './presentations/cube';
 import {flywheel} from './presentations/flywheel';
 import {TextMask} from './TextMask';
 import {flip} from './presentations/flip';
-import {BLUE, PINK} from './colors';
+import {PINK} from './colors';
 import {NaNa1} from './NaNa1';
 import {NaNa2} from './NaNa2';
 import {NaNa3} from './NaNa3';
 import {ThreeByThree} from './ThreeByThree';
 import {RemotionTransitions} from './RemotionTransitions';
 import {fontFamily} from './font';
+import {BlueNa} from './BlueNa';
 
 export const FlyWheel = () => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const spr = spring({fps, frame, durationInFrames: 20});
 	return (
-		<AbsoluteFill
+		<TransitionSeries
 			style={{
 				backgroundColor: 'white',
 			}}
 		>
-			<TransitionSeries style={{}}>
-				<TransitionSeries.Sequence durationInFrames={45}>
+			<TransitionSeries.Sequence durationInFrames={45}>
+				<AbsoluteFill
+					style={{
+						justifyContent: 'center',
+						alignItems: 'center',
+					}}
+				>
+					<Img
+						style={{height: 300, scale: String(spr)}}
+						src="https://github.com/remotion-dev/brand/raw/main/withouttitle/element-0.png"
+					/>
+				</AbsoluteFill>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 6})}
+				presentation={flywheel({anchor: 'left'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={25}>
+				<Tile>
+					<NaNa1 />
+				</Tile>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={flywheel({anchor: 'right'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={25}>
+				<Tile>
+					<NaNa2 />
+				</Tile>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={flywheel({anchor: 'top'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={25}>
+				<Tile>
+					<NaNa3 />
+				</Tile>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={flywheel({anchor: 'bottom'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={20}>
+				<Tile>
 					<AbsoluteFill
 						style={{
 							justifyContent: 'center',
 							alignItems: 'center',
+							fontFamily,
+							fontSize: 450,
+							color: 'white',
+							backgroundColor: PINK,
+							fontWeight: 'bolder',
+							fontVariationSettings: `"wght" 900, "wdth" 125`,
 						}}
 					>
-						<Img
-							style={{height: 300, scale: String(spr)}}
-							src="https://github.com/remotion-dev/brand/raw/main/withouttitle/element-0.png"
-						/>
-					</AbsoluteFill>
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 6})}
-					presentation={flywheel({anchor: 'left'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={25}>
-					<Tile>
-						<NaNa1 />
-					</Tile>
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={flywheel({anchor: 'right'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={25}>
-					<Tile>
-						<NaNa2 />
-					</Tile>
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={flywheel({anchor: 'top'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={25}>
-					<Tile>
-						<NaNa3 />
-					</Tile>
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={flywheel({anchor: 'bottom'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={20}>
-					<Tile>
-						<AbsoluteFill
-							style={{
-								justifyContent: 'center',
-								alignItems: 'center',
-								fontFamily,
-								fontSize: 450,
-								color: 'white',
-								backgroundColor: PINK,
-								fontWeight: 'bolder',
-								fontVariationSettings: `"wght" 900, "wdth" 125`,
-							}}
-						>
-							NA
-						</AbsoluteFill>{' '}
-					</Tile>
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={flywheel({anchor: 'top'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={25}>
-					<Tile>
-						<AbsoluteFill
-							style={{
-								justifyContent: 'center',
-								alignItems: 'center',
-								fontFamily,
-								fontSize: 450,
-								color: 'white',
-								backgroundColor: BLUE,
-								fontWeight: 'bolder',
-								fontVariationSettings: `"wght" 900, "wdth" 125`,
-							}}
-						>
-							NA
-						</AbsoluteFill>{' '}
-					</Tile>
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={flywheel({anchor: 'left'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={55}>
-					<Tile>
-						<IDontWannaWork />
-					</Tile>
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={slide({direction: 'from-top'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={110}>
-					<Tile>
-						<NanaGrid />
-					</Tile>
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={slide({direction: 'from-top'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={90}>
-					<Tile>
-						<TextMask />
-					</Tile>
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={slide({direction: 'from-top'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={60}>
-					<IDontWannaWork2 />
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={slide({direction: 'from-right'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={50}>
-					<Lottery flipped={false} />
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
-					presentation={flip({direction: 'from-left', perspective: 2000})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={50}>
-					<Lottery flipped />
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
-					presentation={cube({direction: 'from-top', perspective: 1000})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={70}>
-					<IDontWannaWork3 />
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={cube({direction: 'from-top', perspective: 1000})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={80}>
-					<TransitionStyles />
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
-					presentation={cube({direction: 'from-left', perspective: 1000})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={60}>
-					<IDontWannaWork4 />
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
-					presentation={cube({direction: 'from-left', perspective: 1000})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={85}>
-					<Tile noOverflow>
-						<ThreeByThree />
-					</Tile>
-				</TransitionSeries.Sequence>
-				<TransitionSeries.Transition
-					timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-					presentation={slide({direction: 'from-top'})}
-				/>
-				<TransitionSeries.Sequence durationInFrames={300}>
-					<RemotionTransitions />
-				</TransitionSeries.Sequence>
-			</TransitionSeries>
-		</AbsoluteFill>
+						NA
+					</AbsoluteFill>{' '}
+				</Tile>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={flywheel({anchor: 'top'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={25}>
+				<Tile>
+					<BlueNa />
+				</Tile>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={flywheel({anchor: 'left'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={55}>
+				<Tile>
+					<IDontWannaWork />
+				</Tile>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={slide({direction: 'from-top'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={110}>
+				<Tile>
+					<NanaGrid />
+				</Tile>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={slide({direction: 'from-top'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={90}>
+				<Tile>
+					<TextMask />
+				</Tile>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={slide({direction: 'from-top'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={60}>
+				<IDontWannaWork2 />
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={slide({direction: 'from-right'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={50}>
+				<Lottery flipped={false} />
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+				presentation={flip({direction: 'from-left', perspective: 2000})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={50}>
+				<Lottery flipped />
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+				presentation={cube({direction: 'from-top', perspective: 1000})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={70}>
+				<IDontWannaWork3 />
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={cube({direction: 'from-top', perspective: 1000})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={80}>
+				<TransitionStyles />
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+				presentation={cube({direction: 'from-left', perspective: 1000})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={60}>
+				<IDontWannaWork4 />
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
+				presentation={cube({direction: 'from-left', perspective: 1000})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={85}>
+				<Tile noOverflow>
+					<ThreeByThree />
+				</Tile>
+			</TransitionSeries.Sequence>
+			<TransitionSeries.Transition
+				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
+				presentation={slide({direction: 'from-top'})}
+			/>
+			<TransitionSeries.Sequence durationInFrames={300}>
+				<RemotionTransitions />
+			</TransitionSeries.Sequence>
+		</TransitionSeries>
 	);
 };
 

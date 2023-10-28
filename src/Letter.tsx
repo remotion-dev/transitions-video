@@ -1,4 +1,10 @@
-import {AbsoluteFill} from 'remotion';
+import {
+	AbsoluteFill,
+	interpolate,
+	spring,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 import {fontFamily} from './font';
 
 export const Letter: React.FC<{
@@ -8,6 +14,21 @@ export const Letter: React.FC<{
 	borderRadius?: number;
 	fontSize?: number;
 }> = ({backgroundColor, letter, color, borderRadius, fontSize}) => {
+	const {fps} = useVideoConfig();
+	const frame = useCurrentFrame();
+
+	const spr = spring({
+		fps,
+		frame,
+		config: {
+			damping: 200,
+		},
+		durationInFrames: 20,
+	});
+
+	const weight = interpolate(spr, [0, 1], [600, 900]);
+	const wdth = interpolate(spr, [0, 1], [100, 125]);
+
 	return (
 		<AbsoluteFill
 			style={{
@@ -20,7 +41,7 @@ export const Letter: React.FC<{
 				fontWeight: 'bolder',
 				borderRadius,
 				WebkitBackfaceVisibility: 'hidden',
-				fontVariationSettings: `"wght" 900, "wdth" 125`,
+				fontVariationSettings: `"wght" ${weight}, "wdth" ${wdth}`,
 			}}
 		>
 			{letter}
