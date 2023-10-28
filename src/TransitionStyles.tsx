@@ -12,11 +12,7 @@ import {cube} from './presentations/cube';
 import {clockWipe} from './presentations/clock-wipe';
 import {BLUE, GREEN, PINK} from './colors';
 
-const delays = [4, 9, 18, 25];
-const endDelays = [30, 30, 30, 35];
-const delays3 = [40, 43, 26, 32];
-
-export const Different = () => {
+export const TransitionStyles = () => {
 	return (
 		<AbsoluteFill
 			style={{
@@ -44,38 +40,10 @@ export const Different = () => {
 							margin: 5,
 						}}
 					>
-						{i === 0 ? (
-							<SlideTransitions
-								key={0}
-								startDelay={delays[i]}
-								endDelay={endDelays[i]}
-								delay3={delays3[i]}
-							/>
-						) : null}
-						{i === 1 ? (
-							<CubeTransitions
-								key={1}
-								startDelay={delays[i]}
-								endDelay={endDelays[i]}
-								delay3={delays3[i]}
-							/>
-						) : null}
-						{i === 2 ? (
-							<ClockTransitions
-								key={1}
-								startDelay={delays[i]}
-								endDelay={endDelays[i]}
-								delay3={delays3[i]}
-							/>
-						) : null}
-						{i === 3 ? (
-							<FadeTransitions
-								key={1}
-								startDelay={delays[i]}
-								endDelay={endDelays[i]}
-								delay3={delays3[i]}
-							/>
-						) : null}
+						{i === 0 ? <SlideTransitions key={0} /> : null}
+						{i === 1 ? <CubeTransitions key={1} /> : null}
+						{i === 2 ? <ClockTransitions key={1} /> : null}
+						{i === 3 ? <FadeTransitions key={1} /> : null}
 					</div>
 				))}
 			</AbsoluteFill>
@@ -83,13 +51,9 @@ export const Different = () => {
 	);
 };
 
-const SlideTransitions: React.FC<{
-	startDelay: number;
-	endDelay: number;
-	delay3: number;
-}> = ({startDelay, endDelay, delay3}) => {
+const SlideTransitions: React.FC = () => {
 	return (
-		<TransitionSeries style={{}}>
+		<TransitionSeries>
 			<TransitionSeries.Sequence durationInFrames={20}>
 				<AbsoluteFill style={{overflow: 'hidden'}}>
 					<Letter backgroundColor={BLUE} letter="NA" />
@@ -126,11 +90,7 @@ const SlideTransitions: React.FC<{
 	);
 };
 
-const CubeTransitions: React.FC<{
-	startDelay: number;
-	endDelay: number;
-	delay3: number;
-}> = ({startDelay, endDelay, delay3}) => {
+const CubeTransitions: React.FC = () => {
 	return (
 		<TransitionSeries
 			style={{
@@ -173,11 +133,7 @@ const CubeTransitions: React.FC<{
 	);
 };
 
-const ClockTransitions: React.FC<{
-	startDelay: number;
-	endDelay: number;
-	delay3: number;
-}> = ({startDelay, endDelay, delay3}) => {
+const ClockTransitions: React.FC = () => {
 	const width = 540;
 	const height = 540;
 	return (
@@ -218,11 +174,7 @@ const ClockTransitions: React.FC<{
 	);
 };
 
-const FadeTransitions: React.FC<{
-	startDelay: number;
-	endDelay: number;
-	delay3: number;
-}> = ({startDelay, endDelay, delay3}) => {
+const FadeTransitions: React.FC = () => {
 	return (
 		<TransitionSeries style={{}}>
 			<TransitionSeries.Sequence durationInFrames={20}>

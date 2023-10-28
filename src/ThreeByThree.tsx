@@ -12,7 +12,7 @@ import {wipe} from '@remotion/transitions/wipe';
 
 const indicesToFlip = [0, 3, 6, 4, 2, 5, 8];
 
-export const ThreeBythree = () => {
+export const ThreeByThree = () => {
 	return (
 		<AbsoluteFill
 			style={{

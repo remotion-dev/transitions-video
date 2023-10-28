@@ -8,7 +8,7 @@ import {
 	useCurrentFrame,
 	useVideoConfig,
 } from 'remotion';
-import {Different} from './Different';
+import {TransitionStyles} from './TransitionStyles';
 import {NanaGrid} from './Grid';
 import {IDontWannaWork} from './IDontWannaWork';
 import {IDontWannaWork2} from './IDontWannaWork2';
@@ -23,7 +23,7 @@ import {BLUE, PINK} from './colors';
 import {NaNa1} from './NaNa1';
 import {NaNa2} from './NaNa2';
 import {NaNa3} from './NaNa3';
-import {ThreeBythree} from './ThreeByThree';
+import {ThreeByThree} from './ThreeByThree';
 import {RemotionTransitions} from './RemotionTransitions';
 import {fontFamily} from './font';
 
@@ -165,7 +165,7 @@ export const FlyWheel = () => {
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
 					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
-					presentation={flip({direction: 'from-left', perspective: 1000})}
+					presentation={flip({direction: 'from-left', perspective: 2000})}
 				/>
 				<TransitionSeries.Sequence durationInFrames={50}>
 					<Lottery flipped />
@@ -182,7 +182,7 @@ export const FlyWheel = () => {
 					presentation={cube({direction: 'from-top', perspective: 1000})}
 				/>
 				<TransitionSeries.Sequence durationInFrames={80}>
-					<Different />
+					<TransitionStyles />
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
 					timing={springTiming({config: {damping: 200}, durationInFrames: 20})}
@@ -197,7 +197,7 @@ export const FlyWheel = () => {
 				/>
 				<TransitionSeries.Sequence durationInFrames={85}>
 					<Tile noOverflow>
-						<ThreeBythree />
+						<ThreeByThree />
 					</Tile>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
