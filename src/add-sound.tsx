@@ -6,27 +6,26 @@ import {
 import React from 'react';
 
 export function addSound<T extends Record<string, unknown>>(
-	transition: (t: T) => TransitionPresentation<T>,
+	transition: TransitionPresentation<T>,
 	src: string
-): (t: T) => TransitionPresentation<T> {
-	return (props) => {
-		const {component: Component, props: resultingProps} = transition(props);
+): TransitionPresentation<T> {
+	const {component: Component, props: resultingProps} = transition;
 
-		const C = Component as React.FC<TransitionPresentationComponentProps<T>>;
+	const C = Component as React.FC<TransitionPresentationComponentProps<T>>;
 
-		const NewComponent: React.FC<TransitionPresentationComponentProps<T>> = (
-			p
-		) => {
-			return (
-				<>
-					<Audio src={src} />
-					<C {...p} />
-				</>
-			);
-		};
-		return {
-			component: NewComponent,
-			props: resultingProps,
-		};
+	const NewComponent: React.FC<TransitionPresentationComponentProps<T>> = (
+		p
+	) => {
+		return (
+			<>
+				{p.presentationDirection === 'entering' ? <Audio src={src} /> : null}
+				<C {...p} />
+			</>
+		);
+	};
+
+	return {
+		component: NewComponent,
+		props: resultingProps,
 	};
 }

@@ -1,7 +1,8 @@
 import {springTiming, TransitionSeries} from '@remotion/transitions';
 import {wipe} from '@remotion/transitions/wipe';
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill, staticFile} from 'remotion';
+import {addSound} from './add-sound';
 import {GREEN, PINK} from './colors';
 import {flip} from './presentations/flip';
 
@@ -92,10 +93,13 @@ export const RemotionTransitions: React.FC = () => {
 				</Title>
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
-				presentation={flip({
-					direction: 'from-left',
-					perspective: 1000,
-				})}
+				presentation={addSound(
+					flip({
+						direction: 'from-left',
+						perspective: 1000,
+					}),
+					staticFile('whip.mp3')
+				)}
 				timing={springTiming({
 					config: {
 						damping: 200,
