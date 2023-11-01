@@ -19,33 +19,34 @@ export const NanaGrid = () => {
 			}}
 		>
 			<TransitionSeries>
-				<TransitionSeries.Sequence
-					durationInFrames={80}
-					style={{
-						display: 'block',
-					}}
-				>
-					{new Array(4).fill(true).map((_, i) => (
-						<div
-							style={{
-								height: 530,
-								width: 530,
-								position: 'relative',
-								overflow: 'hidden',
-								display: 'inline-block',
-								marginBottom: 0,
-								verticalAlign: 'top',
-								margin: 5,
-							}}
-						>
-							<Transitions
-								key={i}
-								startDelay={delays[i]}
-								endDelay={endDelays[i]}
-								delay3={delays3[i]}
-							/>
-						</div>
-					))}
+				<TransitionSeries.Sequence durationInFrames={80}>
+					<AbsoluteFill
+						style={{
+							display: 'block',
+						}}
+					>
+						{new Array(4).fill(true).map((_, i) => (
+							<div
+								style={{
+									height: 530,
+									width: 530,
+									position: 'relative',
+									overflow: 'hidden',
+									display: 'inline-block',
+									marginBottom: 0,
+									verticalAlign: 'top',
+									margin: 5,
+								}}
+							>
+								<Transitions
+									key={i}
+									startDelay={delays[i]}
+									endDelay={endDelays[i]}
+									delay3={delays3[i]}
+								/>
+							</div>
+						))}
+					</AbsoluteFill>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
 					presentation={wipe({direction: 'from-top'})}
@@ -56,20 +57,21 @@ export const NanaGrid = () => {
 						durationInFrames: 10,
 					})}
 				/>
-				<TransitionSeries.Sequence
-					durationInFrames={20}
-					style={{
-						backgroundColor: BLUE,
-						fontFamily,
-						fontSize: 500,
-						fontWeight: 'bold',
-						color: 'white',
-						justifyContent: 'center',
-						alignItems: 'center',
-						fontVariationSettings: `"wght" 900, "wdth" 125`,
-					}}
-				>
-					NA
+				<TransitionSeries.Sequence durationInFrames={20}>
+					<AbsoluteFill
+						style={{
+							backgroundColor: BLUE,
+							fontFamily,
+							fontSize: 500,
+							fontWeight: 'bold',
+							color: 'white',
+							justifyContent: 'center',
+							alignItems: 'center',
+							fontVariationSettings: `"wght" 900, "wdth" 125`,
+						}}
+					>
+						NA
+					</AbsoluteFill>
 				</TransitionSeries.Sequence>
 				<TransitionSeries.Transition
 					presentation={wipe({direction: 'from-left'})}
@@ -80,20 +82,21 @@ export const NanaGrid = () => {
 						durationInFrames: 10,
 					})}
 				/>
-				<TransitionSeries.Sequence
-					durationInFrames={30}
-					style={{
-						backgroundColor: PINK,
-						fontFamily,
-						fontSize: 500,
-						fontWeight: 'bold',
-						color: 'white',
-						justifyContent: 'center',
-						alignItems: 'center',
-						fontVariationSettings: `"wght" 900, "wdth" 125`,
-					}}
-				>
-					NA
+				<TransitionSeries.Sequence durationInFrames={30}>
+					<AbsoluteFill
+						style={{
+							backgroundColor: PINK,
+							fontFamily,
+							fontSize: 500,
+							fontWeight: 'bold',
+							color: 'white',
+							justifyContent: 'center',
+							alignItems: 'center',
+							fontVariationSettings: `"wght" 900, "wdth" 125`,
+						}}
+					>
+						NA
+					</AbsoluteFill>
 				</TransitionSeries.Sequence>
 			</TransitionSeries>
 		</AbsoluteFill>
