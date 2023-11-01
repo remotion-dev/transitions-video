@@ -16,7 +16,7 @@ import {IDontWannaWork3} from './IDontWannaWork3';
 import {IDontWannaWork4} from './IDontWannaWork4';
 import {Lottery} from './Lottery';
 import {cube} from './presentations/cube';
-import {flywheel} from './presentations/flywheel';
+import {wheelspin} from './presentations/wheelspin';
 import {TextMask} from './TextMask';
 import {PINK} from './colors';
 import {NaNa1} from './NaNa1';
@@ -28,7 +28,7 @@ import {fontFamily} from './font';
 import {BlueNa} from './BlueNa';
 import {flip} from '@remotion/transitions/flip';
 
-export const FlyWheel = () => {
+export const MainSequence = () => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const spr = spring({fps, frame, durationInFrames: 20});
@@ -53,7 +53,7 @@ export const FlyWheel = () => {
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({config: {damping: 200}, durationInFrames: 6})}
-				presentation={flywheel({anchor: 'left'})}
+				presentation={wheelspin({anchor: 'left'})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={25}>
 				<Tile>
@@ -62,7 +62,7 @@ export const FlyWheel = () => {
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-				presentation={flywheel({anchor: 'right'})}
+				presentation={wheelspin({anchor: 'right'})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={25}>
 				<Tile>
@@ -71,7 +71,7 @@ export const FlyWheel = () => {
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-				presentation={flywheel({anchor: 'top'})}
+				presentation={wheelspin({anchor: 'top'})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={25}>
 				<Tile>
@@ -80,7 +80,7 @@ export const FlyWheel = () => {
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-				presentation={flywheel({anchor: 'bottom'})}
+				presentation={wheelspin({anchor: 'bottom'})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={20}>
 				<Tile>
@@ -102,7 +102,7 @@ export const FlyWheel = () => {
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-				presentation={flywheel({anchor: 'top'})}
+				presentation={wheelspin({anchor: 'top'})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={25}>
 				<Tile>
@@ -111,7 +111,7 @@ export const FlyWheel = () => {
 			</TransitionSeries.Sequence>
 			<TransitionSeries.Transition
 				timing={springTiming({config: {damping: 200}, durationInFrames: 10})}
-				presentation={flywheel({anchor: 'left'})}
+				presentation={wheelspin({anchor: 'left'})}
 			/>
 			<TransitionSeries.Sequence durationInFrames={55}>
 				<Tile>

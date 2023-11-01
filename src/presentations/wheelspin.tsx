@@ -5,12 +5,12 @@ import type {
 import React, {useMemo} from 'react';
 import {AbsoluteFill, interpolate} from 'remotion';
 
-type FlyWheelPresentationProps = {
+type WheelSpingPresentationProps = {
 	anchor: 'left' | 'right' | 'top' | 'bottom';
 };
 
-export const FlyWheel: React.FC<
-	TransitionPresentationComponentProps<FlyWheelPresentationProps>
+export const WheelSpin: React.FC<
+	TransitionPresentationComponentProps<WheelSpingPresentationProps>
 > = ({children, presentationDirection, presentationProgress, passedProps}) => {
 	const style: React.CSSProperties = useMemo(() => {
 		const angle = 15;
@@ -49,8 +49,8 @@ export const FlyWheel: React.FC<
 	);
 };
 
-export const flywheel = (
-	props: FlyWheelPresentationProps
-): TransitionPresentation<FlyWheelPresentationProps> => {
-	return {component: FlyWheel, props};
+export const wheelspin = (
+	props: WheelSpingPresentationProps
+): TransitionPresentation<WheelSpingPresentationProps> => {
+	return {component: WheelSpin, props};
 };

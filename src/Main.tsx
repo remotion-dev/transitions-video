@@ -1,7 +1,7 @@
 import {Audio, Sequence, staticFile} from 'remotion';
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
-import {FlyWheel} from './MainSequence';
+import {MainSequence} from './MainSequence';
 
 export const Main: React.FC = () => {
 	return (
@@ -9,7 +9,7 @@ export const Main: React.FC = () => {
 			<Sequence from={20}>
 				<Audio src={staticFile('idontwannawork.wav')} />
 			</Sequence>
-			<FlyWheel />
+			<MainSequence />
 		</AbsoluteFill>
 	);
 };
