@@ -1,4 +1,8 @@
-# Remotion video
+
+
+# `@remotion/transitions` announcement video
+
+See it here: https://www.youtube.com/watch?v=9RBORy2fMuI
 
 <p align="center">
   <a href="https://github.com/remotion-dev/logo">
