@@ -1,10 +1,10 @@
 import {springTiming, TransitionSeries} from '@remotion/transitions';
+import {flip} from '@remotion/transitions/flip';
 import {wipe} from '@remotion/transitions/wipe';
 import React from 'react';
 import {AbsoluteFill, staticFile} from 'remotion';
 import {addSound} from './add-sound';
 import {GREEN, PINK} from './colors';
-import {flip} from './presentations/flip';
 
 const Title: React.FC<{
 	backgroundColor: string;

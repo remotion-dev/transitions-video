@@ -1,6 +1,6 @@
 import {Composition} from 'remotion';
 import {TransitionStyles} from './TransitionStyles';
-import {FlyWheel} from './FlyWheel';
+import {FlyWheel} from './MainSequence';
 import {NanaGrid} from './Grid';
 import {IDontWannaWork2} from './IDontWannaWork2';
 import {IDontWannaWork3} from './IDontWannaWork3';
@@ -34,7 +34,7 @@ export const RemotionRoot: React.FC = () => {
 				height={1080}
 			/>
 			<Composition
-				id="FlyWheel"
+				id="MainSequence"
 				component={FlyWheel}
 				durationInFrames={300}
 				fps={30}

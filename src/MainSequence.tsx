@@ -18,7 +18,6 @@ import {Lottery} from './Lottery';
 import {cube} from './presentations/cube';
 import {flywheel} from './presentations/flywheel';
 import {TextMask} from './TextMask';
-import {flip} from './presentations/flip';
 import {PINK} from './colors';
 import {NaNa1} from './NaNa1';
 import {NaNa2} from './NaNa2';
@@ -27,6 +26,7 @@ import {ThreeByThree} from './ThreeByThree';
 import {RemotionTransitions} from './RemotionTransitions';
 import {fontFamily} from './font';
 import {BlueNa} from './BlueNa';
+import {flip} from '@remotion/transitions/flip';
 
 export const FlyWheel = () => {
 	const frame = useCurrentFrame();
